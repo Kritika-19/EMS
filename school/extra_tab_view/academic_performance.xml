@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<record id="academic_performance_tree_view" model="ir.ui.view">
+	    <field name="name">Academic Performance Tree View</field>
+	    <field name="model">academic.performance</field>
+	    <field name="arch" type="xml">
+	        <tree string="Create Academic Performance">
+	            <field name="date"/>
+	            <field name="teacher_id"/>
+	            <field name="strength"/>
+	            <field name="study_year_id"/>
+	        </tree>
+	    </field>
+	</record>
+	
+	<record id="academic_performance_form_view" model="ir.ui.view">
+	    <field name="name">Academic Performance Form View</field>
+	    <field name="model">academic.performance</field>
+	    <field name="arch" type="xml">
+	        <form string="Academic Performance Form View">
+	        	<sheet>
+	        		<group col="4">
+	        			<field name="date" class="oe_inline" />
+	        			<field name="teacher_id" class="oe_inline" />
+	        			<field name="strength" class="oe_inline" />
+	        			<field name="study_year_id" class="oe_inline" />
+	        		</group>
+	        	</sheet>
+	        </form>
+	    </field>
+	</record>
+	
+	<record model="ir.actions.act_window" id="academic_performance_action_id">
+	    <field name="name">Academic Performance</field>
+	    <field name="res_model">academic.performance</field>
+	    <field name="type">ir.actions.act_window</field>
+	    <field name="view_type">form</field>
+	    <field name="view_mode">tree,form</field>
+	    <field name="view_id" eval="academic_performance_tree_view" />
+	</record>
+	
+	<menuitem id="main_menu_student_extra_tab" name="Student's Extra Tabs" parent="school.menu_configuration" />
+	<menuitem id="menu_academic_performance" name="Academic Performance" parent="main_menu_student_extra_tab" action="academic_performance_action_id" />
+	
+</odoo>
+
+
+
+
+
+
+
+
+
+

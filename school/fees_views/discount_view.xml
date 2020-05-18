@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="ems_discount_tree_view" model="ir.ui.view">
+        <field name="name">EMS Discount Tree View</field>
+        <field name="model">ems.discount</field>
+        <field name="arch" type="xml">
+            <tree string="Create EMS Discount">
+                <field name="name"/>
+                <field name="arabic_name"/>
+                <field name="amount"/>
+                <field name="account_id"/>
+                <field name="description"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="ems_discount_form_view" model="ir.ui.view">
+        <field name="name">EMS Discount Form View</field>
+        <field name="model">ems.discount</field>
+        <field name="arch" type="xml">
+            <form string="EMS Discount Form View">
+                <sheet>
+                    <!--	            	<h1><field name="name"/></h1>-->
+                    <!--	            	<group col="4">-->
+                    <!--	            		<field name="arabic_name"/>-->
+                    <!--						<field name="amount" />-->
+                    <!--						<field name="account_id" />-->
+                    <!--						<field name="description" />-->
+                    <!--	            	</group>-->
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="discount_type"/>
+                            <field name="account_id"/>
+                        </group>
+                        <group>
+                            <field name="arabic_name"/>
+                            <field name="amount"/>
+                            <field name="description"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="ems_discount_action">
+        <field name="name">EMS Discount</field>
+        <field name="res_model">ems.discount</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" eval="ems_discount_tree_view"/>
+    </record>
+
+    <!--    Muhammad Jawaid Iqbal 6/1/2020-->
+    <record id="view_account_account_discount_form" model="ir.ui.view">
+        <field name="name">account.account.discount.form.view</field>
+        <field name="model">account.account</field>
+        <field name="inherit_id" ref="account.view_account_form"/>
+        <field name="arch" type="xml">
+            <field name="user_type_id" position="after">
+                <field name="discount_account"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="view_account_invoice_discount_form" model="ir.ui.view">
+        <field name="name">account.invoice.discount.form.view</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.invoice_form"/>
+        <field name="arch" type="xml">
+            <field name="date_invoice" position="after">
+                <field name="apply_discount"/>
+            </field>
+            <field name="amount_tax" position="before">
+                <field name="discount_account" domain="[('discount_account', '=', True),('user_type_id','=',16)]"
+                       options="{'no_create': True}" attrs="{'invisible': [('apply_discount' ,'=', False)]}"/>
+                <field name="discount_type_id" options="{'no_create': True}"
+                       attrs="{'invisible': [('apply_discount' ,'=', False)]}"/>
+                <field name="discount_value" attrs="{'invisible': [('apply_discount' ,'=', False)]}"/>
+                <field name="amount_after_discount" attrs="{'invisible': [('apply_discount' ,'=', False)]}"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="form_discount_type_view" model="ir.ui.view">
+        <field name="name">discount.type.form</field>
+        <field name="model">discount.type</field>
+        <field name="priority">8</field>
+        <field name="arch" type="xml">
+            <form string="Discount Type">
+                <sheet>
+                    <group>
+                        <field name="name" required="1"/>
+                        <field name="discount_value"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_discount_type_search" model="ir.ui.view">
+        <field name="name">discount.type.search</field>
+        <field name="model">discount.type</field>
+        <field name="priority">8</field>
+        <field name="arch" type="xml">
+            <search string="Discount Type">
+                <field name="name"/>
+                <field name="discount_value"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="tree_discount_type_view" model="ir.ui.view">
+        <field name="name">discount.type.tree</field>
+        <field name="model">discount.type</field>
+        <field name="priority">8</field>
+        <field name="arch" type="xml">
+            <tree string="Discount Type">
+                <field name="name"/>
+                <field name="discount_value"/>
+            </tree>
+        </field>
+    </record>
+
+    <template id="report_invoice_discount_inherit" inherit_id="account.report_invoice_document">
+        <xpath expr="//div[@class='clearfix']" position="replace">
+            <div class="clearfix">
+                <div id="total" class="row">
+                    <div t-attf-class="#{'col-4' if report_type != 'html' else 'col-sm-7 col-md-5'} ml-auto">
+                        <table class="table table-sm">
+                            <t t-if="not o.discount_value">
+                                <tr class="border-black" style="border-bottom:1px solid #dddddd;">
+                                    <td>
+                                        <strong>Subtotal</strong>
+                                    </td>
+                                    <td class="text-right">
+                                        <span t-field="o.amount_untaxed"/>
+                                    </td>
+                                </tr>
+                                <t t-foreach="o.amount_by_group" t-as="amount_by_group">
+                                    <tr style="border-bottom:1px solid #dddddd;">
+                                        <t t-if="len(o.tax_line_ids) == 1 and o.amount_untaxed == amount_by_group[2]">
+                                            <td>
+                                                <span t-esc="amount_by_group[0]"/>
+                                            </td>
+                                            <td class="text-right">
+                                                <span t-esc="amount_by_group[3]"/>
+                                            </td>
+                                        </t>
+                                        <t t-else="">
+                                            <td>
+                                                <span t-esc="amount_by_group[0]"/>
+                                                <span>&amp;nbsp;
+                                                    <span>on</span>
+                                                    <t t-esc="amount_by_group[4]"/>
+                                                </span>
+                                            </td>
+                                            <td class="text-right">
+                                                <span t-esc="amount_by_group[3]"/>
+                                            </td>
+                                        </t>
+                                    </tr>
+                                </t>
+                                <tr class="border-black">
+                                    <td>
+                                        <strong>Total</strong>
+                                    </td>
+                                    <td class="text-right">
+                                        <span t-field="o.amount_total"/>
+                                    </td>
+                                </tr>
+                            </t>
+                            <t t-if="o.discount_value">
+                                <tr class="border-black" style="border-bottom:1px solid #dddddd;">
+                                    <td>
+                                        <strong>Amount Before Discount</strong>
+                                    </td>
+                                    <td class="text-right">
+                                        <span t-field="o.amount_untaxed"/>
+                                    </td>
+                                </tr>
+                                <tr class="border-black" style="border-bottom:1px solid #dddddd;">
+                                    <td>
+                                        <strong>Discount Type</strong>
+                                    </td>
+                                    <td class="text-right">
+                                        <span t-field="o.discount_type_id"/>
+                                    </td>
+                                </tr>
+                                <tr class="border-black" style="border-bottom:1px solid #dddddd;">
+                                    <td>
+                                        <strong>Invoice Discount</strong>
+                                    </td>
+                                    <td class="text-right">
+                                        <span t-field="o.discount_value"/>
+                                    </td>
+                                </tr>
+                                <tr class="border-black" style="border-bottom:1px solid #dddddd;">
+                                    <td>
+                                        <strong>Amount After Discount</strong>
+                                    </td>
+                                    <td class="text-right">
+                                        <span t-field="o.amount_after_discount"/>
+                                    </td>
+                                </tr>
+                            </t>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </xpath>
+    </template>
+
+    <menuitem id="main_menu_ems_discount" name="Discounts" parent="menu_configuration"/>
+    <menuitem id="menu_ems_discount" name="Discounts" parent="main_menu_ems_discount" action="ems_discount_action"/>
+
+
+</odoo>
+
+
+
+
+
+
+
+
+
+

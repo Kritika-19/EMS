@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+	<record id="offence_tree_view" model="ir.ui.view">
+	    <field name="name">Offence Tree View</field>
+	    <field name="model">offence</field>
+	    <field name="arch" type="xml">
+	        <tree string="Create Offence">
+	            <field name="subject_ids" widget="many2many_tags"/>
+	            <field name="date"/>
+	            <field name="offence_type"/>
+	            <field name="teacher_id"/>
+	            <field name="study_year_id"/>
+	        </tree>
+	    </field>
+	</record>
+	
+	<record id="offence_form_view" model="ir.ui.view">
+	    <field name="name">Offence Form View</field>
+	    <field name="model">offence</field>
+	    <field name="arch" type="xml">
+	        <form string="Offence Form View">
+	        	<sheet>
+	        		<group col="4">
+	        			<field name="subject_ids" class="oe_inline" widget="many2many_tags" />
+			            <field name="date" class="oe_inline" />
+			            <field name="offence_type" class="oe_inline" />
+			            <field name="teacher_id" class="oe_inline" />
+			            <field name="study_year_id" class="oe_inline" />
+	        		</group>
+	        	</sheet>
+	        </form>
+	    </field>
+	</record>
+	
+	<record model="ir.actions.act_window" id="offence_action_id">
+	    <field name="name">Offence</field>
+	    <field name="res_model">offence</field>
+	    <field name="type">ir.actions.act_window</field>
+	    <field name="view_type">form</field>
+	    <field name="view_mode">tree,form</field>
+	    <field name="view_id" eval="offence_tree_view" />
+	</record>
+	
+	<menuitem id="menu_offence" name="Offence" parent="main_menu_student_extra_tab" action="offence_action_id" />
+	
+</odoo>
+
+
+
+
+
+
+
+
+
+

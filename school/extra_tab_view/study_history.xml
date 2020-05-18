@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+	<record id="study_history_tab_tree_view" model="ir.ui.view">
+	    <field name="name">Study History Tab Tree View</field>
+	    <field name="model">study.history.tab</field>
+	    <field name="arch" type="xml">
+	        <tree string="Create Study History Tab">
+	            <field name="study_year_id"/>
+	            <field name="class_id"/>
+	            <field name="division_id"/>
+	            <field name="school_id"/>
+	            <field name="region_id"/>
+	            <field name="average_grade"/>
+	            <field name="result"/>
+	            <field name="note"/>
+	            <field name="status"/>
+	        </tree>
+	    </field>
+	</record>
+	
+	<record id="study_history_tab_form_view" model="ir.ui.view">
+	    <field name="name">Study History Tab Form View</field>
+	    <field name="model">study.history.tab</field>
+	    <field name="arch" type="xml">
+	        <form string="Study History Tab Form View">
+	        	<sheet>
+	        		<group col="4">
+	        			<field name="study_year_id" class="oe_inline" />
+						<field name="class_id" class="oe_inline" />
+						<field name="division_id" class="oe_inline" />
+						<field name="school_id" class="oe_inline" />
+						<field name="region_id" class="oe_inline" />
+						<field name="average_grade" class="oe_inline" />
+						<field name="result" class="oe_inline" />
+						<field name="note" class="oe_inline" />
+						<field name="status" class="oe_inline" />
+	        		</group>
+	        	</sheet>
+	        </form>
+	    </field>
+	</record>
+	
+	<record model="ir.actions.act_window" id="study_history_tab_action_id">
+	    <field name="name">Study History Tab</field>
+	    <field name="res_model">study.history.tab</field>
+	    <field name="type">ir.actions.act_window</field>
+	    <field name="view_type">form</field>
+	    <field name="view_mode">tree,form</field>
+	    <field name="view_id" eval="study_history_tab_tree_view" />
+	</record>
+	
+	<menuitem id="menu_study_history_tab" name="Study History Tab" parent="main_menu_student_extra_tab" action="study_history_tab_action_id" />
+	
+</odoo>
+
+
+
+
+
+
+
+
+
+

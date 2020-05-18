@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <data>
+        <template id="assets_backend" name="school assets" inherit_id="web.assets_backend">
+            <xpath expr="." position="inside">
+                <link rel="stylesheet" href="/school/static/src/less/schoolcss.less"/>
+            </xpath>
+        </template>
+
+        <template id="report_invoice_document_inherit" inherit_id="account.report_invoice_document">
+            <xpath expr="//div[hasclass('page')]/div/div/address" position="after">
+                <span t-esc="o.partner_id.mobile"/>
+            </xpath>
+        </template>
+
+    </data>
+</odoo>

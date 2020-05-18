@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+	<record id="subscription_email_months_details" model="mail.template">
+          <field name="name">Subsciption Details</field>
+          <field name="email_from"><![CDATA[${object.email}]]></field>
+          <field name="subject">${object.invoice_id.partner_id.name} Subsciption Details</field>
+          <field name="email_to">${object.invoice_id.partner_id.email}</field>
+          <field name="email_cc">${object.subscription_id.cc_in_mail}</field>
+          <field name="lang">${object.lang}</field>
+          <field name="model_id" ref="school.model_subscription_line"/>
+          <field name="auto_delete" eval="True"/>
+		  <field name="body_html">
+	         <![CDATA[
+				<div style="font-family: 'Lucica Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: rgb(255, 255, 255); ">
+				    <p>Dear ${object.invoice_id.partner_id.name},</p>
+				    <p>
+				     This is to inform you that your fees subscription amount ${object.sub_amount} is due after ${object.subscription_id.reminder_days} days. If you would like to pay your subscription pack please contact ${object.subscription_id.company_id.name}.
+					</p>
+					</br>
+					<p></br>Thank you for your cooperation,</p>
+					<p></br>${user.name}</p>
+				</div>
+            	]]>
+		</field>
+	</record>
+
+</odoo>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<record id="classification_tree_view" model="ir.ui.view">
+	    <field name="name">Classification Tree View</field>
+	    <field name="model">classification</field>
+	    <field name="arch" type="xml">
+	        <tree string="Create Classification">
+	            <field name="name"/>
+	        </tree>
+	    </field>
+	</record>
+	
+	<record id="classification_form_view" model="ir.ui.view">
+	    <field name="name">Classification Form View</field>
+	    <field name="model">classification</field>
+	    <field name="arch" type="xml">
+	        <form string="Classification Form View">
+	        	<sheet>
+	        		<group col="4">
+	        			<field name="name" class="oe_inline" />
+	        		</group>
+	        	</sheet>
+	        </form>
+	    </field>
+	</record>
+	
+	<record model="ir.actions.act_window" id="classification_action_id">
+	    <field name="name">Classification</field>
+	    <field name="res_model">classification</field>
+	    <field name="type">ir.actions.act_window</field>
+	    <field name="view_type">form</field>
+	    <field name="view_mode">tree,form</field>
+	    <field name="view_id" eval="classification_tree_view" />
+	</record>
+	
+	<menuitem id="menu_classification" name="Classification" parent="main_menu_student_extra_tab" action="classification_action_id" />
+	
+</odoo>
+
+
+
+
+
+
+
+
+
+

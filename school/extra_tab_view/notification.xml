@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<record id="notification_tree_view" model="ir.ui.view">
+	    <field name="name">Notification Tree View</field>
+	    <field name="model">notification</field>
+	    <field name="arch" type="xml">
+	        <tree string="Create Notification">
+	            <field name="study_year_id"/>
+	            <field name="description1"/>
+	            <field name="description2"/>
+	            <field name="status"/>
+	        </tree>
+	    </field>
+	</record>
+	
+	<record id="notification_form_view" model="ir.ui.view">
+	    <field name="name">Notification Form View</field>
+	    <field name="model">notification</field>
+	    <field name="arch" type="xml">
+	        <form string="Notification Form View">
+	        	<sheet>
+	        		<group col="4">
+	        			<field name="study_year_id" class="oe_inline" />
+			            <field name="description1" class="oe_inline" />
+			            <field name="description2" class="oe_inline" />
+			            <field name="status" class="oe_inline" />
+	        		</group>
+	        	</sheet>
+	        </form>
+	    </field>
+	</record>
+	
+	<record model="ir.actions.act_window" id="notification_action_id">
+	    <field name="name">Notification</field>
+	    <field name="res_model">notification</field>
+	    <field name="type">ir.actions.act_window</field>
+	    <field name="view_type">form</field>
+	    <field name="view_mode">tree,form</field>
+	    <field name="view_id" eval="notification_tree_view" />
+	</record>
+	
+	<menuitem id="menu_notification" name="Notification" parent="main_menu_student_extra_tab" action="notification_action_id" />
+	
+</odoo>
+
+
+
+
+
+
+
+
+
+

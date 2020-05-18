@@ -1,0 +1,294 @@
+<?xml version="1.0" ?>
+<odoo>
+    <data>
+
+        <!-- search View Of Parent's Profiles -->
+        <record id="view_school_parent_search" model="ir.ui.view">
+            <field name="name">school.parent.search</field>
+            <field name="model">school.parent</field>
+            <field name="arch" type="xml">
+                <search string="Search Parent">
+                    <field name="name"/>
+                    <field name="guardian_mobile1"/>
+                    <field name="guardian_mobile2"/>
+                    <field name="guardian_passport_no"/>
+                    <field name="guardian_email"/>
+                    <!--<field name="name"-->
+                    <!--filter_domain="['|','|',('display_name','ilike',self),('ref','=',self),('email','ilike',self)]"/>-->
+                    <separator/>
+                    <filter string="Archived" name="inactive" domain="[('active','=',False)]"/>
+                </search>
+            </field>
+        </record>
+
+        <!-- tree View Of Parent's Profiles -->
+        <record id="view_school_parent_tree" model="ir.ui.view">
+            <field name="name">school.parent.tree</field>
+            <field name="model">school.parent</field>
+            <field name="arch" type="xml">
+                <tree string="Parents">
+                    <field name="name"/>
+                    <field name="guardian_passport_no"/>
+                    <field name="guardian_mobile1"/>
+                    <field name="guardian_mobile2"/>
+                    <field name="relation_id"/>
+                    <field name="phone"/>
+                    <field name="email"/>
+                    <!--<field name="city"/>-->
+                    <field name="country_id"/>
+
+                </tree>
+            </field>
+        </record>
+
+        <!-- Form View Of Parent's Profiles -->
+        <record id="view_school_parent_form" model="ir.ui.view">
+            <field name="name">school.parent.form</field>
+            <field name="model">school.parent</field>
+            <field name="arch" type="xml">
+                <form string="Parents">
+                    <header>
+                        <button string="Create Contract" name="generate_sub_invoice_lines" type="object"
+                                class="btn-primary o_sale_confirm"
+                                attrs="{'invisible':[('is_subscription','!=',True)]}"/>
+                    </header>
+                    <sheet>
+                        <div class="oe_button_box" name="button_box">
+                            <button name="toggle_active" type="object" groups="base.group_no_one" class="oe_stat_button"
+                                    icon="fa-archive">
+                                <field name="active" widget="boolean_button"
+                                       options="{&quot;terminology&quot;: &quot;archive&quot;}"/>
+                            </button>
+                            <button name="action_view_invoice"
+                                    type="object"
+                                    class="oe_stat_button"
+                                    icon="fa-pencil-square-o"
+                                    attrs="{'invisible': [('invoice_count', '=', 0)]}">
+                                <field name="invoice_count" widget="statinfo" string="Invoices"/>
+                            </button>
+                        </div>
+                        <field name="type" invisible="1"/>
+                        <field name="image" widget="image" class="oe_avatar"
+                               options="{&quot;preview_image&quot;: &quot;image_medium&quot;, &quot;size&quot;: [90, 90]}"/>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="name" default_focus="1" placeholder="Name"
+                                       attrs="{'required' : [('type', '=', 'contact')]}"/>
+                            </h1>
+                        </div>
+                        <div invisible="1">
+                            <label for="relation_id"/>
+                            <field name="relation_id"/>
+                        </div>
+                        <group invisible="1">
+                            <group string="Postal Address" name="postal_address">
+                                <label for="street" string="Address"/>
+                                <div class="o_address_format">
+                                    <field name="street" placeholder="Street..." class="o_address_street"/>
+                                    <field name="street2" placeholder="Street 2..." class="o_address_street"/>
+                                    <field name="city" placeholder="City" class="o_address_city"/>
+                                    <field name="state_id" class="o_address_state" placeholder="State"
+                                           options="{&quot;no_open&quot;: True}"
+                                           context="{'country_id': country_id, 'zip': zip}"/>
+                                    <field name="zip" placeholder="ZIP" class="o_address_zip"/>
+                                    <field name="country_id" placeholder="Country" class="o_address_country"
+                                           options="{&quot;no_open&quot;: True, &quot;no_create&quot;: True}"/>
+                                </div>
+                            </group>
+                            <group string="Communication" name="communication">
+                                <field name="phone" widget="phone"/>
+                                <field name="mobile" widget="phone"/>
+                                <field name="user_ids" invisible="1"/>
+                                <field name="email" widget="email"/>
+                            </group>
+                        </group>
+
+                        <group string="General Information" colspan="4" col="4">
+                            <group>
+                                <field name="son_of_employee" class="oe_inline"/>
+                                <field name="is_black_list" class="oe_inline"/>
+                                <field name="employee_id" attrs="{'invisible':[('son_of_employee','=',False)]}"/>
+                                <!--<field name="guardian_black_list_date" class="oe_inline"/>-->
+                                <field name="guardian_id_number" class="oe_inline"/>
+                                <field name="guardian_id_issued_place" class="oe_inline"/>
+                                <field name="guardian_id_expiry_date" class="oe_inline"/>
+                                <field name="guardian_arabic_name" class="oe_inline"/>
+                                <!--<field name="guardian_name" class="oe_inline"/>-->
+                                <field name="guardian_relationship_student" class="oe_inline"/>
+                                <field name="guardian_nationality" class="oe_inline"/>
+                                <field name="title" options="{&quot;no_open&quot;: True}"/>
+                                <field name="lang_id"/>
+                                <!--<field name="lang"/>-->
+                            </group>
+                            <group>
+                                <field name="is_subscription" class="oe_inline" invisible="1"/>
+                                <field name="guardian_passport_no" class="oe_inline"/>
+                                <field name="guardian_passport_issued_place" class="oe_inline"/>
+                                <field name="guardian_passport_expiry_date" class="oe_inline"/>
+                                <field name="guardian_address"/>
+                                <field name="guardian_work_address"/>
+                                <field name="guardian_home_tel" widget="phone" class="oe_inline"/>
+                                <field name="guardian_mobile1" widget="phone" class="oe_inline"/>
+                                <field name="guardian_mobile2" widget="phone" class="oe_inline"/>
+                                <field name="guardian_email" widget="email" class="oe_inline" required="1"/>
+                                <field name="guardian_work" class="oe_inline"/>
+                                <field name="guardian_document" class="oe_inline"/>
+                                <field name="category_id" widget="many2many_tags" placeholder="Tags..."/>
+                            </group>
+                        </group>
+
+                        <!--<separator string="Payment Schedule" colspan="4"-->
+                        <!--attrs="{'invisible':[('is_subscription','!=',True)]}"/>-->
+                        <!--<group col="4" attrs="{'invisible':[('is_subscription','!=',True)]}">-->
+                        <!--<group>-->
+                        <!--<field name="subscription_amount" invisible="1"/>-->
+                        <!--<field name="renew_so" invisible="1"/>-->
+                        <!--<field name="periodicity" class="oe_inline"/>-->
+                        <!--<field name="subscription_duration" class="oe_inline"/>-->
+                        <!--<field name="journal_id" class="oe_inline"/>-->
+                        <!--<field name="property_account_receivable_id"-->
+                        <!--domain="[('internal_type','=','receivable'),('deprecated','=',False)]"/>-->
+                        <!--</group>-->
+                        <!--<group>-->
+                        <!--<field name="issue_date" class="oe_inline"-->
+                        <!--attrs="{'required':[('is_subscription','!=',False)]}"/>-->
+                        <!--<field name="end_date" class="oe_inline"/>-->
+                        <!--<field name="reminder_days" class="oe_inline"/>-->
+                        <!--<field name="cc_in_mail" class="oe_inline"/>-->
+                        <!--<field name="check_inv" invisible="1"/>-->
+                        <!--<field name="property_account_payable_id"-->
+                        <!--domain="[('internal_type','=','payable'),('deprecated','=',False)]"/>-->
+                        <!--</group>-->
+                        <!--</group>-->
+
+                        <notebook>
+                            <page name="children" string="Children">
+                                <field name="student_id" domain="[('state','=','done')]"
+                                       context="{'default_basic_parent_id': active_id,
+                            		'default_home_address': guardian_address,'default_middle':name,'default_home_address':guardian_address,'default_father_email':guardian_email,
+                            		'default_home_tel_no':guardian_home_tel,'default_student_father_full_name':name,
+                            		'default_father_mobile_no':guardian_mobile1,'default_student_father_full_name_arabic':guardian_arabic_name,
+                            		'default_student_nationality':guardian_nationality,'default_father_employment_place':guardian_work_address
+                            		}">
+                                    <tree create='1'>
+                                        <field name="pid"/>
+                                        <field name="name"/>
+                                        <field name="student_name"/>
+                                        <field name="standard_id"/>
+                                        <field name="year" widget="selection"/>
+                                        <field name="admission_date"/>
+                                        <field name="gender"/>
+                                        <field name="state"/>
+                                        <field name="school_id"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page name="applicable_fee" string="Applicable Fee">
+                                <field name="new_line_ids">
+                                    <tree>
+                                        <field name="sequence"/>
+                                        <field name="new_student_id"/>
+                                        <field name="name"/>
+                                        <field name="classes"/>
+                                        <field name="code"/>
+                                        <field name="type"/>
+                                        <field name="inv_state"/>
+                                        <field name="account_id"/>
+                                        <field name="discount_ids" widget="many2many_tags"/>
+                                        <field name="tax_ids" widget="many2many_tags"/>
+                                        <field name="amount"/>
+                                    </tree>
+                                </field>
+                                <separator string="" colspan="4"/>
+                                <group class="oe_subtotal_footer oe_right" colspan="2">
+                                    <field name="total"/>
+                                </group>
+                            </page>
+                            <!-- copy attrs from server -->
+                            <!-- Muhammad Jawaid Iqbal -->
+                            <page string="Invoices" attrs="{'invisible': [('is_subscription', '=', False)]}">
+                                <field name="sub_line_ids" readonly="1">
+                                    <tree>
+                                        <field name="subscription_no"/>
+                                        <field name="subscription_status" invisible="1"/>
+                                        <field name="sub_start_date"/>
+                                        <field name="sub_end_date"/>
+                                        <field name="sub_amount" sum="Amount"/>
+                                        <field name="invoice_id" invisible="1"/>
+                                        <field name="status"/>
+                                        <field name="amount_paid" sum="Amount Paid"/>
+                                        <button name="sub_invoices" class="btn btn-primary btn-sm o_form_button_edit"
+                                                string="Create Invoice" type="object"
+                                                attrs="{'invisible': ['|',('invoice_id', '!=', False),('subscription_status', '!=', False)]}"/>
+                                        <button name="view_sub_invoice" string="View Invoice" type="object"
+                                                class="btn btn-primary btn-sm o_form_button_edit"
+                                                attrs="{'invisible': [('invoice_id', '==', False)]}"/>
+                                    </tree>
+                                </field>
+                            </page>
+
+                            <page name="internal_notes" string="Internal Notes">
+                                <field name="comment" placeholder="Internal note..."/>
+                            </page>
+                            <page string="Payment Schedule" attrs="{'invisible':[('is_subscription','!=',True)]}">
+                                <group col="4" attrs="{'invisible':[('is_subscription','!=',True)]}">
+                                    <group>
+                                        <field name="subscription_amount" invisible="1"/>
+                                        <field name="renew_so" invisible="1"/>
+                                        <field name="periodicity" class="oe_inline"/>
+                                        <field name="subscription_duration" class="oe_inline"/>
+                                        <field name="journal_id" class="oe_inline"/>
+                                        <field name="property_account_receivable_id"
+                                               domain="[('internal_type','=','receivable'),('deprecated','=',False)]"/>
+                                    </group>
+                                    <group>
+                                        <field name="issue_date" class="oe_inline"
+                                               attrs="{'required':[('is_subscription','!=',False)]}"/>
+                                        <field name="end_date" class="oe_inline"/>
+                                        <field name="reminder_days" class="oe_inline"/>
+                                        <field name="cc_in_mail" class="oe_inline"/>
+                                        <field name="check_inv" invisible="1"/>
+                                        <field name="property_account_payable_id"
+                                               domain="[('internal_type','=','payable'),('deprecated','=',False)]"/>
+                                    </group>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Action View Of school parent-->
+
+        <record id="action_school_parent_form" model="ir.actions.act_window">
+            <field name="name">Parent Profile</field>
+            <field name="res_model">school.parent</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="menu_res_partner_form" name="Parents" parent="menu_students_parents"
+                  action="action_school_parent_form" sequence="33"
+                  groups="school.group_school_administration,school.group_school_student,school.group_school_teacher,school.group_school_parent"/>
+
+        <act_window id="account.action_account_partner_ledger_menu"
+                    name="Parent Ledger"
+                    res_model="account.report.partner.ledger"
+                    src_model="school.parent"
+                    view_id="account.account_common_report_view"
+        />
+
+        <template id="report_partnerledger_inherit" inherit_id="account.report_partnerledger">
+            <xpath expr="//div[hasclass('page')]/h2" position="replace">
+                <t t-if="o._context['active_model'] == 'school.parent'">
+                    <h2>Parent Ledger</h2>
+                </t>
+                <t t-else="">
+                    <h2>Partner Ledger</h2>
+                </t>
+            </xpath>
+        </template>
+
+    </data>
+</odoo>
