@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<record id="rma_tree_view" model="ir.ui.view">
+	    <field name="name">Custom Account Move Line</field>
+	    <field name="model">custom.account.move.line</field>
+	    <field name="arch" type="xml">
+	        <tree string="Custom Account Move Line">
+	        	<field name="date"/>
+	            <field name="name"/>
+	            <field name="ac_name" />
+	            <field name="statement_id"/>
+	            <field name="narration"/>
+	            <field name="amount"/>
+	            <field name="tax" />
+	            <field name="total" />
+	        </tree>
+	    </field>
+	</record>
+	
+	<record id="rma_form_view" model="ir.ui.view">
+	    <field name="name">Custom Account Move Line Form View</field>
+	    <field name="model">custom.account.move.line</field>
+	    <field name="arch" type="xml">
+	        <form string="RMA Form View">
+	            <sheet>
+	                <h1><field name="name" class="oe_inline" /></h1>
+	                <group>
+						<field name="ac_name"  class="oe_inline" />
+						<field name="statement_id"  class="oe_inline" />
+						<field name="narration"/>
+						<field name="date"/>
+	                </group>
+	                <group>
+	                	<field name="amount" class="oe_inline" />
+	                	<field name="tax" class="oe_inline" />
+	                	<field name="total" class="oe_inline" />
+	                	<field name="company_id" invisible="1" />
+	                	<field name="currency_id" invisible="1" />
+	                </group>
+	            </sheet>
+	        </form>
+	    </field>
+	</record>
+	
+	<record model="ir.actions.act_window" id="rma_action">
+	    <field name="name">Custom Account Move Line</field>
+	    <field name="res_model">custom.account.move.line</field>
+	    <field name="type">ir.actions.act_window</field>
+	    <field name="view_type">form</field>
+	    <field name="view_mode">tree,form</field>
+	    <field name="view_id" eval="rma_tree_view" />
+	</record>
+	
+	<menuitem id="menu_rma_request_id" name="Custom Move Line" parent="account.menu_finance_receivables_documents" sequence="21" action="rma_action" />
+	
+</odoo>
+
+
+
+
+
+
+
+
+
+

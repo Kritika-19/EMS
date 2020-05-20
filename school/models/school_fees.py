@@ -503,6 +503,14 @@ class StudentPayslipLineLine(models.Model):
     to_month = fields.Many2one('academic.month', 'To Month')
 
 
+class AccountInvoice(models.Model):
+    _inherit = "account.invoice"
+
+    slip_ref = fields.Char('Fees Slip Reference',
+                           help="Payslip Reference")
+    student_payslip_id = fields.Many2one('student.payslip', string="Student Payslip")
+
+
 class AccountPayment(models.Model):
     _inherit = "account.payment"
 

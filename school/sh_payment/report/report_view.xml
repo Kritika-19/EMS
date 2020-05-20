@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<report
+            id="action_custom_report_account_statement" 
+            model="account.bank.statement"
+            string="Statement"
+            name="sh_payment.custom_report_statement"
+            file="sh_payment.custom_report_statement_id"
+            report_type="qweb-pdf"
+        />
+</odoo>

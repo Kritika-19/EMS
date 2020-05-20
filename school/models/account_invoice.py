@@ -20,9 +20,6 @@ class AccountInvoice(models.Model):
     partner_id = fields.Many2one('res.partner', string='Parent', change_default=True,
                                  required=True, readonly=True, states={'draft': [('readonly', False)]},
                                  track_visibility='always')
-    slip_ref = fields.Char('Fees Slip Reference',
-                           help="Payslip Reference")
-    student_payslip_id = fields.Many2one('student.payslip', string="Student Payslip")
     user_id = fields.Many2one('res.users', string='User', track_visibility='onchange',
                               readonly=True, states={'draft': [('readonly', False)]},
                               default=lambda self: self.env.user, copy=False)
@@ -40,30 +37,6 @@ class AccountInvoice(models.Model):
         readonly=True,
         states={'draft': [('readonly', False)]},
     )
-    # Muhammad Jawaid Iqbal 6/1/2020
-    apply_discount = fields.Boolean()
-    discount_account = fields.Many2one('account.account')
-    discount_type_id = fields.Many2one('discount.type', 'Discount Type')
-    discount_value = fields.Float()
-    amount_after_discount = fields.Monetary()
-
-    @api.onchange('discount_type_id')
-    def _onchange_discount_type_id(self):
-        if self.discount_type_id.name == 'Percent':
-            self.amount_after_discount = self.amount_untaxed - (self.amount_untaxed * self.discount_value / 100)
-            self.amount_total = self.amount_after_discount + self.amount_tax
-        if self.discount_type_id.name == 'Fixed':
-            self.amount_after_discount = self.amount_untaxed - self.discount_value
-            self.amount_total = self.amount_after_discount + self.amount_tax
-
-    @api.onchange('discount_value')
-    def _onchange_discount_value(self):
-        if self.discount_type_id.name == 'Percent':
-            self.amount_after_discount = self.amount_untaxed - (self.amount_untaxed * self.discount_value / 100)
-            self.amount_total = self.amount_after_discount + self.amount_tax
-        if self.discount_type_id.name == 'Fixed':
-            self.amount_after_discount = self.amount_untaxed - self.discount_value
-            self.amount_total = self.amount_after_discount + self.amount_tax
 
     @api.multi
     def _get_tax_factor(self):
@@ -189,13 +162,6 @@ class AccountInvoiceLine(models.Model):
     name = fields.Text(string='Student', required=True)
     price_unit = fields.Monetary(string='Fee Amount', required=True, digits=dp.get_precision('Product Price'))
     student_id = fields.Many2one('student.student', string='Student')
-
-
-class DiscountType(models.Model):
-    _name = 'discount.type'
-
-    name = fields.Char('Discount Name')
-    discount_value = fields.Float()
 
 
 class StudentInvoiceLine(models.Model):

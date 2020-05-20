@@ -85,7 +85,7 @@ class SchoolParent(models.Model):
     property_account_receivable_id = fields.Many2one('account.account', 'Account Receivable')
     property_account_payable_id = fields.Many2one('account.account', 'Account Payable')
     subscription_duration = fields.Integer(string='Payment Duration', compute='compute_periodicity', default=12)
-    issue_date = fields.Date(string='Start Date')
+    issue_date = fields.Date(string='Start Date' ,required=False)
     # Muhammad Jawaid Iqbal
     # remove Subscription to Payment
     end_date = fields.Date(compute="subscription_issudate", store='True', string='End Payment Date')
@@ -118,7 +118,7 @@ class SchoolParent(models.Model):
     non_invoiced = fields.Float(string="Non Invoiced", compute='compute_new_line_ids')
 
     new_line_ids = fields.One2many('parent.student.fees.structure.line', 'new_parent_id', string='Fee Structure Lines')
-    journal_id = fields.Many2one('account.journal', string='Journal', required=True)
+    journal_id = fields.Many2one('account.journal', string='Journal', required=False)
 
     ########################### Subscription Codes #############################
 
