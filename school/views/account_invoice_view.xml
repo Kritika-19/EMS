@@ -130,7 +130,7 @@
                 <field name="paid_amount" readonly="1" sum="Total"/>
                 <!--                Muhammad Jawaid Iqbal-->
                 <!-- <field name="payment_method_id"/> -->
-                <field name="payment_method_description"/>
+                <!-- <field name="payment_method_description"/> -->
 
                 <!-- lo agregamos para que al usar guardar y nuevo se ejecute onchange en la form y previsualice bien importe en la tree -->
                 <field name="amount" invisible="1"/>
