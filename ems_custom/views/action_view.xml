@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+ <!-- Action Of Form & Tree Views Of Standard Information -->
+    <record id="school.action_standard_standard_form" model="ir.actions.act_window">
+        <field name="name">Class</field>
+        <field name="res_model">standard.standard</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Action Of Form & Tree Views Of Standard Division Information Action -->
+    <record id="school.action_standard_division_form" model="ir.actions.act_window">
+        <field name="name">Section</field>
+        <field name="res_model">standard.division</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

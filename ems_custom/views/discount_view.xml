@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="school.ems_discount_tree_view" model="ir.ui.view">
+        <field name="name">EMS Discount Tree View</field>
+        <field name="model">ems.discount</field>
+        <field name="arch" type="xml">
+            <tree string="Create EMS Discount">
+                <field name="name"/>
+                <field name="arabic_name"/>
+                <field name="school_id"/>
+                <field name="acadamic_year_id"/>
+                <field name="branch_id"/>
+                <field name="amount" />
+                <field name="account_id" />
+                <field name="description" />
+            </tree>
+        </field>
+    </record>
+    <record id="school.ems_discount_form_view" model="ir.ui.view">
+        <field name="name">EMS Discount Form View</field>
+        <field name="model">ems.discount</field>
+        <field name="arch" type="xml">
+            <form string="EMS Discount Form View">
+                <sheet>
+                    <h1><field name="name"/></h1>
+                    <group>
+                        <group>
+                            <field name="arabic_name"/>
+                            <field name="description" />
+                            <field name="school_id"/>
+                            <field name="acadamic_year_id"/>
+                            <field name="branch_id"/>
+                        </group>
+                        <group>
+                            <field name="account_id"/>
+                            <field name="discount_type"/>
+                            <field name="amount" attrs="{'required':[('discount_type', '!=', 'percentage')]}"/>
+                            <field name="amount_per" attrs="{'required':[('discount_type', '!=', 'fix')]}"/>
+                            <field name="brother_dic_for_bro"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

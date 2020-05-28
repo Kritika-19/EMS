@@ -10,7 +10,7 @@
     'complexity': 'easy',
     'Summary': 'A Module For School Management',
     'images': ['static/description/EMS.jpg'],
-    'depends': ['hr', 'crm', 'account', 'account_check_printing'],
+    'depends': ['hr', 'crm', 'account', 'account_check_printing', 'account_cancel'],
     'data': ['security/school_security.xml',
              'security/ir.model.access.csv',
              'security2/ir.model.access.csv',

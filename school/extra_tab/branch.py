@@ -5,25 +5,3 @@ class StudentBranch(models.Model):
     _description = 'Student Branch'
 
     name = fields.Char(string='Branch')
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    

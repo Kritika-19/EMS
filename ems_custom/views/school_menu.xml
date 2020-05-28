@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="menu_configuration_new" name="EMS Configurations" sequence="13"
+              groups="school.group_school_administration"/>    
+    <menuitem id="school.menu_configuration" name="Configurations" parent="menu_configuration_new" sequence="13"
+              groups="school.group_school_administration"/>
+    <menuitem id="school.menu_standard_standard_form" name="Class" parent="school.menu_school_standard_form"
+              action="school.action_standard_standard_form"/>
+    <menuitem id="school.menu_standard_division_form" name="Section" parent="school.menu_school_standard_form"
+              action="school.action_standard_division_form"/>
+</odoo>

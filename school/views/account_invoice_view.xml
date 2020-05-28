@@ -230,10 +230,10 @@
                 <field name="total_amount"/>
             </field>
 
-            <field name="payment_transaction_id" position="after">
+           <!--  <field name="payment_transaction_id" position="after">
                 <field name="current_due_amount"/>
                 <field name="paid_amount"/>
-            </field>
+            </field> -->
 
             <field name="payment_type" position="attributes">
                 <!-- comes from payment_group and from context on transfers -->
