@@ -32,8 +32,34 @@ class SchoolStandard(models.Model):
     stage = fields.Selection([('enable', 'Enable'), ('disable', 'Disable')], string="State", default="enable")
 
 
+class StudentFeesStructure(models.Model):
+    '''Fees structure'''
+    _inherit = 'student.fees.structure'
+
+    # line_ids = fields.One2many('student.fees.structure.line', 'fee_struct_id', string='Fees Structure')
+    structure_line_ids = fields.One2many('fee.structure.line', 'student_fee_id', string='Fees Structure')
+    academic_year = fields.Many2one('academic.year', string='Academic Years')
+
+
 class StudentFeesStructureLine(models.Model):
     '''Student Fees Structure Line'''
     _inherit = 'student.fees.structure.line'
 
     classes = fields.Many2one('standard.standard', string='Class', required=False)
+    # fee_struct_id = fields.Many2one('student.fees.structure', string="Structure")
+
+
+class FeeStructureLine(models.Model):
+    _name = "fee.structure.line"
+
+    name = fields.Char(related='structre_line_id.name', string="name")
+    structre_line_id = fields.Many2one('student.fees.structure.line', string="Fees Head")
+    student_fee_id = fields.Many2one('student.fees.structure', string="Fee structure")
+    amount = fields.Float(string="Amount")
+    code = fields.Char(related='structre_line_id.code', string='Code')
+    account_id = fields.Many2one(related='structre_line_id.account_id', string="Account")
+    company_id = fields.Many2one(related='structre_line_id.company_id', string='Company', change_default=True, default=lambda obj_c: obj_c.env['res.users'].browse([obj_c._uid])[0].company_id)
+    currency_id = fields.Many2one(related='structre_line_id.currency_id', string='Currency')
+    currency_symbol = fields.Char(related="currency_id.symbol", string='Symbol')
+    arabic_name = fields.Char(related='structre_line_id.arabic_name', string='Arabic Name')
+    academic_year = fields.Many2one(related='structre_line_id.academic_year', string='Academic Years')

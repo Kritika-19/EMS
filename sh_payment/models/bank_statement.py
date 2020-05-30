@@ -43,8 +43,51 @@ class BankStatement(models.Model):
             for line in statement.line_ids:
                 total_new += line.amount
             statement.total_new = total_new
-            
+
     def _update_payment_table(self):
+        self._cr.execute("DELETE FROM custom_account_move_line")
+        #payments = self.env['account.payment'].search([])
+        
+        self._cr.execute("""select line.id, line.amount,p.id from 
+                            account_bank_statement_line line left join 
+                            account_payment p on (line.move_name=p.payment_reference)
+                            where line.statement_id=%s"""%(self.id))
+        res = self._cr.fetchall()
+        payment_obj = self.env['account.payment']
+        for line_id, line_amount, payment_id in res:
+            payment = payment_obj.browse(payment_id)
+            move = self.env['account.move'].search([('name','=',payment.payment_reference)])
+#             line_id = self.env['account.bank.statement.line'].search([('move_name','=',payment.payment_reference),
+#                                                                       ('move_name','!=',''),
+#                                                                       ('statement_id','=',self.id)])
+            payment.write({'statement_id': self.id,
+                           'statement_line_id': line_id,
+                           'custom_amount': line_amount,
+                           'move_id': move.id,})
+            if payment.statement_line_id and payment.statement_id:
+                custom = self.env['custom.account.move.line'].create({'account_payment_id':payment.id,'statement_id': payment.statement_id.id,})
+                if payment.custom_amount > 0:
+                    line = self.env['account.move.line'].search([('payment_id','=',payment.id),('credit','>',0),('tax_base_amount','=',0)])
+                    for ln in line:
+                        custom.name = ln.account_id.id
+                        custom.narration = ln.name
+                        custom.date = ln.date
+                        custom.amount = ln.credit
+                        taxes = self.env['account.move.line'].search([('move_id','=',payment.move_id.id),('credit','<',custom.amount),('tax_base_amount','>',0)])
+                        for tax in taxes:
+                            custom.tax = tax.credit
+                elif payment.custom_amount < 0:
+                    line = self.env['account.move.line'].search([('payment_id','=',payment.id),('debit','>',0),('tax_base_amount','=',0)])
+                    for ln in line:
+                        custom.name = ln.account_id.id
+                        custom.narration = ln.name
+                        custom.date = ln.date
+                        custom.amount = ln.debit
+                        taxes = self.env['account.move.line'].search([('move_id','=',payment.move_id.id),('debit','<',custom.amount),('tax_base_amount','>',0)])
+                        for tax in taxes:
+                            custom.tax = tax.debit
+            
+    def _update_payment_table_not_in_use(self):
         self._cr.execute("DELETE FROM custom_account_move_line")
         payments = self.env['account.payment'].search([])
         for payment in payments:

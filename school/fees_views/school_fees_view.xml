@@ -38,12 +38,12 @@
         <field name="arch" type="xml">
             <form string="Student Fees Structure">
                 <sheet>
-                    <group col="6" colspan="4">
+                    <group >
                         <field name="name" placeholder="Name"/>
                         <field name="code" placeholder="Code"/>
                     </group>
                     <group>
-                        <field name="classes" placeholder="Class" class="oe_inline"/>
+                        <field name="classes" placeholder="Class"/>
                     </group>
                     <notebook colspan="4">
                         <page string="Fees Structure">
