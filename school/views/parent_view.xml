@@ -48,9 +48,7 @@
             <field name="arch" type="xml">
                 <form string="Parents">
                     <header>
-                        <button string="Create Contract" name="generate_sub_invoice_lines" type="object"
-                                class="btn-primary o_sale_confirm"
-                                attrs="{'invisible':[('is_subscription','!=',True)]}"/>
+                       
                     </header>
                     <sheet>
                         <div class="oe_button_box" name="button_box">
@@ -242,14 +240,15 @@
                                                domain="[('internal_type','=','receivable'),('deprecated','=',False)]"/>
                                     </group>
                                     <group>
-                                        <field name="issue_date" class="oe_inline"
-                                               attrs="{'required':[('is_subscription','!=',False)]}"/>
+                                        <field name="issue_date" class="oe_inline"/>
                                         <field name="end_date" class="oe_inline"/>
                                         <field name="reminder_days" class="oe_inline"/>
                                         <field name="cc_in_mail" class="oe_inline"/>
                                         <field name="check_inv" invisible="1"/>
                                         <field name="property_account_payable_id"
                                                domain="[('internal_type','=','payable'),('deprecated','=',False)]"/>
+                                         <button string="Create Contract" name="generate_sub_invoice_lines" type="object"
+                                class="btn-primary o_sale_confirm"/>
                                     </group>
                                 </group>
                             </page>

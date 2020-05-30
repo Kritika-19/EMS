@@ -41,12 +41,12 @@ class StudentFeesStructure(models.Model):
     academic_year = fields.Many2one('academic.year', string='Academic Years')
 
 
-class StudentFeesStructureLine(models.Model):
-    '''Student Fees Structure Line'''
-    _inherit = 'student.fees.structure.line'
+# class StudentFeesStructureLine(models.Model):
+#     '''Student Fees Structure Line'''
+#     _inherit = 'student.fees.structure.line'
 
-    classes = fields.Many2one('standard.standard', string='Class', required=False)
-    # fee_struct_id = fields.Many2one('student.fees.structure', string="Structure")
+#     classes = fields.Many2one('standard.standard', string='Class', required=False)
+#     # fee_struct_id = fields.Many2one('student.fees.structure', string="Structure")
 
 
 class FeeStructureLine(models.Model):
@@ -63,3 +63,11 @@ class FeeStructureLine(models.Model):
     currency_symbol = fields.Char(related="currency_id.symbol", string='Symbol')
     arabic_name = fields.Char(related='structre_line_id.arabic_name', string='Arabic Name')
     academic_year = fields.Many2one(related='structre_line_id.academic_year', string='Academic Years')
+    sequence = fields.Integer(related='structre_line_id.sequence', string='Sequence')
+    duration = fields.Char(related='structre_line_id.duration', string='Duration')
+    classes = fields.Many2one(related='structre_line_id.classes', string='Class', required=True)
+
+    type = fields.Selection([('month', 'Monthly'),
+                             ('year', 'Yearly'),
+                             ('range', 'Range')],
+                            string='Duration', required=True, related="structre_line_id.type")

@@ -166,7 +166,6 @@ class SchoolParent(models.Model):
     @api.one
     @api.depends('issue_date', 'periodicity', 'subscription_duration')
     def subscription_issudate(self):
-        mnth = self.subscription_duration
         if type(self.issue_date) is bool:
             return
 
@@ -175,8 +174,9 @@ class SchoolParent(models.Model):
 
     @api.multi
     def generate_sub_invoice_lines(self):
-        amount = 0
-        if self.is_subscription == True:
+        if not self.issue_date:
+            raise UserError('Please set Start date')
+        if self.is_subscription:
             total_sub = int(self.subscription_duration)
             self._cr.execute("delete from subscription_line where subscription_id =  %s" % (self.id))
             per_sub_amount = self.total / self.subscription_duration

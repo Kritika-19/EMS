@@ -23,3 +23,4 @@
 
 from . import ems_discount
 from . import school_standard
+from . import student_student

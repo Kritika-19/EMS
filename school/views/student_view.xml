@@ -141,9 +141,9 @@
                             <field name="branch"/>
                         </group>
                         <group string="Standard Information">
-                            <field name="standard_id" placeholder="Standard" domain="[('school_id','=',school_id)]"
+                            <field name="standard_id" placeholder="Class" domain="[('school_id','=',school_id)]"
                                    widget="selection" attrs="{'readonly':[('state','in',['alumni','terminate'])]}"/>
-                            <field name="division_id" placeholder="Division" invisible="1" widget="selection"
+                            <field name="division_id" placeholder="Section" invisible="1" widget="selection"
                                    attrs="{'readonly':[('state','in',['alumni','terminate'])]}"/>
                             <field name="medium_id" placeholder="Medium" widget="selection"
                                    attrs="{'readonly':[('state','in',['alumni','terminate'])]}"/>
