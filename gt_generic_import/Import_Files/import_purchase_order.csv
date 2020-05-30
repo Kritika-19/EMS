@@ -1,0 +1,4 @@
+Vendor,Currency,Product,Qty,UOM,Unit Price,Taxes,Order Date,Vendor Ref,Scheduled Date,Payment Terms,Fiscal Position,Incoterm
+ASUSTeK,EUR,42;55,11;2,Unit(s),1200;500;900,IGST 1%,02-11-2017,Test,02-11-2017,15 Days,Inter State,EX WORKS
+ASUSTeK,EUR,56;57,11;2,Unit(s),1200;500;900,IGST 1%,02-11-2017,Test_1,02-11-2017,30 Net Days,Inter State,EX WORKS
+ASUSTeK,EUR,36;37,11;2,Unit(s),1500;2500;900,IGST 1%,02-11-2017,Test_2,02-11-2017,Immediate Payment,Inter State,EX WORKS

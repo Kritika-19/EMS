@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+	<record id="inherited_setup_opening_move_wizard_form" model="ir.ui.view">
+		<field name="name">account.setup.opening.move.wizard.form.inherited</field>
+		<field name="model">account.opening</field>
+		<field name="inherit_id" ref="account.setup_opening_move_wizard_form" />
+		<field name="arch" type="xml">
+			<xpath expr="//form/group[1]" position="after">
+				<group>
+					<group>
+						<field name="data_file" filename="name" />
+					</group>
+					<group>
+						<button name="import_journal" string="Import" type="object" class="oe_highlight" />
+					</group>
+				</group>
+			</xpath>
+		</field>
+	</record>
+
+</odoo>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

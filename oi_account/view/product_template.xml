@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+	<record id="product_template_form_view" model="ir.ui.view">
+		<field name="name">product.template.form.inherit</field>
+		<field name="model">product.template</field>
+		<field name="inherit_id" ref="account.product_template_form_view" />
+		<field name="priority">100</field>
+		<field name="arch" type="xml">
+			<field name="property_account_income_id" position="attributes">
+				<attribute name="domain" />
+			</field>
+			<field name="property_account_expense_id" position="attributes">
+				<attribute name="domain" />
+			</field>
+		</field>
+	</record>
+
+</odoo>

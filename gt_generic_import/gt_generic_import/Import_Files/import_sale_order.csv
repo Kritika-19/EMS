@@ -1,0 +1,5 @@
+ORDER,CUSTOMER,PRICELIST,PRODUCT,QUANTITY,UOM,DESCRIPTION,PRICE,SALESPERSION,TAX,DATE
+MYSO0250,Agrolait,EUR,Basic Computer,1,Unit(s),Basic Computer,10000,Administrator,Tax 15.00%,06-02-2017
+MYSO0250,Agrolait,EUR,Basic Computer,1,Unit(s),Basic Computer,10000,Administrator,Tax 15.00%,06-02-2017
+MYSO0250,Agrolait,EUR,Basic Computer,1,Unit(s),Basic Computer,10000,Administrator,Tax 15.00%,06-02-2017
+MYSO0260,Camptocamp,EUR,Little server,2,Unit(s),Little Server,50000,Administrator,Tax 15.00%,03-04-2014

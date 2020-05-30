@@ -1,0 +1,4 @@
+Comment,PARTNER,CURRENCY,PRODUCT,QUANTITY,UOM,DESCRIPTION,PRICE,SALESPERSION,TAX,DATE,ACCOUNT,PAYMENT_TERM,Fiscal Position,TEAM,Salesperson,SALE ORDER
+Invoice 25,Agrolait,EUR,42;55,11;23,kg,Basic Computer,1200;500;900,Administrator,Tax 15.00%,02-05-2014,Account Receivable,Immediate Payment,Inter State,Europe,Administrator,
+Invoice 25,Agrolait,EUR,56;57,12;32,kg,Basic Computer,1200;500;900,Administrator,Tax 15.00%,02-05-2014,Account Receivable,Immediate Payment,Inter State,Europe,Demo Portal User,
+Invoice 26,Camptocamp,EUR,36;37,20;40,kg,Little Server,1500;2500;900,Administrator,Tax 15.00%,06-04-2015,Account Receivable,Immediate Payment,Inter State,Europe,Demo User,

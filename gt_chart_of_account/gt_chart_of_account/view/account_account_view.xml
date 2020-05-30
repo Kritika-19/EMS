@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+	 <record id="inherited_init_accounts_tree" model="ir.ui.view">
+        <field name="name">account.account.form.view</field>
+        <field name="model">account.account</field>
+        <field name="inherit_id" ref="account.init_accounts_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='code']" position="before">
+            	<field name="parent_id" />
+            </xpath>
+        </field>
+    </record>
+    
+    <record id="inherited_view_account_search" model="ir.ui.view">
+        <field name="name">account.account.search.view</field>
+        <field name="model">account.account</field>
+        <field name="inherit_id" ref="account.view_account_search"/>
+        <field name="arch" type="xml">
+            <xpath expr="//search/group" position="inside">
+            	<filter string="Parent" domain="" context="{'group_by':'parent_id'}"/>
+            </xpath>
+        </field>
+    </record>
+    
+</odoo>

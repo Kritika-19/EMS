@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+	<record id="account.menu_finance" model="ir.ui.menu">
+		<field name="name">Accounting</field>
+	</record>
+	
+	<menuitem id="menu_account_group_tree" action="account.action_account_group_tree" parent="account.account_account_menu" sequence="15" />
+	
+	<menuitem id="menu_account_type_form" action="account.action_account_type_form" parent="account.account_account_menu" sequence="99" groups="base.group_no_one" />
+	<menuitem id="menu_account_tag" action="account.account_tag_action" parent="account.account_account_menu" sequence="100" groups="base.group_no_one" />
+	
+	<menuitem id="menu_account_payment_method" action="act_account_payment_method" parent="payment.root_payment_menu" sequence="30" groups="base.group_no_one" />
+
+</odoo>

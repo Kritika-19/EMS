@@ -1,0 +1,1007 @@
+<section class="oe_container">
+    <div class="oe_row" style="margin-bottom:4%;">
+        <h2 class="oe_slogan" style="letter-spacing: -1px !important;">Odoo Import for BOM, Sales, Purchase, Invoice, Inventory, Payment, Picking, Product and Customer using csv/xls</h2>
+        <p class="oe_mt32" style="color: rgb(122, 115, 115);font-size: 17px;font-weight: 300;line-height: 175% !important;font-family: Lato;word-spacing: 1px !important;">
+            <i>Importing Multiple data is time consuming and problematic area as Odoo user use many apps to import different data, there are chances where you may have un even sequences of data if you are using multiple apps for data import. Now with this app you can import all your data such as sales, purchase, invoice, inventory, products and so on . . . . very easily, which reduces time, efforts and issues during data import from multiple modules of Odoo. This module will help user to easily creating bunch of records in sales, invoice, purchase, inventory, payment, picking, products and customers by importing csv and xls file in Odoo.</i>
+        </p>
+    </div>
+</section>
+
+<section class="oe_container oe_dark">
+    <div class="oe_row" style="margin-bottom:4%">
+        <div class="oe_span12">
+            <div class="panel panel-primary" id="wkid0">
+                <div class="panel-body">
+                    <div class="alert alert-info"><i class="fa fa-arrow-circle-o-right"></i> <b> With the help of this module you can Import all the data such as :  </b></div>
+                    <ul class="list-unstyled">
+                        <li><i class="fa fa-check text-primary"></i> Import invoice </li>
+                        <li><i class="fa fa-check text-primary"></i> Import customer </li>
+			<li><i class="fa fa-check text-primary"></i> Import supplier </li>
+                        <li><i class="fa fa-check text-primary"></i> Import product </li>
+                        <li><i class="fa fa-check text-primary"></i> Import purchase order </li>
+                        <li><i class="fa fa-check text-primary"></i> Import sale order </li>
+                        <li><i class="fa fa-check text-primary"></i> Import inventory </li>
+			<li><i class="fa fa-check text-primary"></i> Import BOM (Bill of Materials) </li>
+                    </ul>
+                    <div class="alert alert-info"><i class="fa fa-arrow-circle-o-right"></i> <b> Some of the Features of this Module </b></div>
+                    <ul class="list-unstyled">
+                        <li><i class="fa fa-check text-primary"></i> Import sales order using Odoo sequence </li>
+                        <li><i class="fa fa-check text-primary"></i> Import sales order using own sequence</li>
+                        <li><i class="fa fa-check text-primary"></i> Import Purchase Order using odoo sequence</li>
+                        <li><i class="fa fa-check text-primary"></i> Import Purchase Order using own sequence</li>
+                        <li><i class="fa fa-check text-primary"></i> Import Purchase Order with state</li>
+                        <li><i class="fa fa-check text-primary"></i> Import products </li>
+                        <li><i class="fa fa-check text-primary"></i> Import picking</li>
+                        <li><i class="fa fa-check text-primary"></i> Import Payments customer payments</li>
+                        <li><i class="fa fa-check text-primary"></i> Import Payments Supplier payments</li>
+                        <li><i class="fa fa-check text-primary"></i> Import Partners</li>
+                        <li><i class="fa fa-check text-primary"></i> Import invoices using Odoo sequence</li>
+                        <li><i class="fa fa-check text-primary"></i> Import invoices using own sequence</li>
+                        <li><i class="fa fa-check text-primary"></i> Import invoices with invoice state (validate, Draft</li>
+                        <li><i class="fa fa-check text-primary"></i> Import invoices by customer or Supplier type </li>
+                        <li><i class="fa fa-check text-primary"></i> Import inventory with Name </li>
+                        <li><i class="fa fa-check text-primary"></i> Import inventory with Code </li>
+                        <li><i class="fa fa-check text-primary"></i> Import inventory with Barcode </li>
+                        <li><i class="fa fa-check text-primary"></i> Import inventory with Serial/lot number with expiry date </li>
+                        <li><i class="fa fa-check text-primary"></i> Import inventory for particular location </li>
+			<li><i class="fa fa-check text-primary"></i> Import Bill of Materials </li>
+                    </ul>
+                </div> 
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row" style="margin-bottom:4%;">
+        <h2 class="oe_slogan" style="letter-spacing: -1px !important;">Here we go with the presentation of  the Odoo App </h2>
+        <p class="oe_mt32" style="color: rgb(122, 115, 115);font-size: 26px;font-weight: 300;line-height: 175% !important;font-family: Lato;word-spacing: 1px !important;">
+            <i>Click on install button to install the module </i>
+        </p>
+        <div class="oe_row" style="margin-bottom:4%;margin-top:4%;">
+            <img src="Import_data1.png" style="display:block;margin:0px auto;width:100%;">
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row" style="margin-bottom:4%;">
+	<h2 class="oe_slogan" style="letter-spacing: -1px !important;">Import Sales Order / Order line </h2>
+        <p class="oe_mt32" style="color: rgb(122, 115, 115);font-size: 26px;font-weight: 300;line-height: 175% !important;font-family: Lato;word-spacing: 1px !important;">
+            <i>After installing the module follow the points number which is shows in screenshots. <br/>
+                (1) Click on Sale button It will navigate you to sale page. <br/>
+                (2) Click on import sales button it will open import sales order wizard form where you can import the csv/xls file  
+            </i>
+        </p>
+        <div class="oe_row" style="margin-bottom:4%;margin-top:4%;">
+            <img src="Import_sale2.png" style="display:block;margin:0px auto;width:100%;">
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row" style="margin-bottom:4%;">
+        <p class="oe_mt32" style="color: rgb(122, 115, 115);font-size: 26px;font-weight: 300;line-height: 175% !important;font-family: Lato;word-spacing: 1px !important;">
+            <i>
+                (1) select file type which you want to upload like (csv/xls) <br/>
+                (2) click on upload your file button and attach the file you want to upload <br/>
+                (3) select sequence type of the each records. <br/>
+                (4) select the state of the records which is imported by file which you have attached 
+            </i>
+        </p>
+        <div class="oe_row" style="margin-bottom:4%;margin-top:4%;">
+            <img src="Import_sale3.png" style="display:block;margin:0px auto;width:100%;">
+        </div>
+    </div>
+</section>
+<section class="oe_container">
+    <div class="oe_row" style="margin-bottom:4%;">
+        <p class="oe_mt32" style="color: rgb(122, 115, 115);font-size: 26px;font-weight: 300;line-height: 175% !important;font-family: Lato;word-spacing: 1px !important;">
+            <i> All sales order data should be in same sequence in file which is shown in screenshot </i>
+        </p>
+        <div class="oe_row" style="margin-bottom:4%;margin-top:4%;">
+            <img src="Import_sale1.png" style="display:block;margin:0px auto;width:100%;">
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row" style="margin-bottom:4%;">
+        <p class="oe_mt32" style="color: rgb(122, 115, 115);font-size: 26px;font-weight: 300;line-height: 175% !important;font-family: Lato;word-spacing: 1px !important;">
+            <i>After importing xls/csv file the record will create and it shows in list view </i>
+        </p>
+        <div class="oe_row" style="margin-bottom:4%;margin-top:4%;">
+            <img src="Import_sale4.png" style="display:block;margin:0px auto;width:100%;">
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row" style="margin-bottom:4%;">
+        <p class="oe_mt32" style="color: rgb(122, 115, 115);font-size: 26px;font-weight: 300;line-height: 175% !important;font-family: Lato;word-spacing: 1px !important;">
+            <i>In this screenshot you can see the details of record which was imported in xls/csv file and also whatever options you selected in wizard form according to that record has created.</i>
+        </p>
+        <div class="oe_row" style="margin-bottom:4%;margin-top:4%;">
+            <img src="Import_sale5.png" style="display:block;margin:0px auto;width:100%;">
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row" style="margin-bottom:4%;">
+        <p class="oe_mt32" style="color: rgb(122, 115, 115);font-size: 26px;font-weight: 300;line-height: 175% !important;font-family: Lato;word-spacing: 1px !important;">
+            <i> (1) file type has changed from xls to csv <br/>
+                (2) file has attached csv file <br/>
+                (3) sequence of all record has changed from file sequence to system sequence <br/>
+            </i>
+        </p>
+        <div class="oe_row" style="margin-bottom:4%;margin-top:4%;">
+            <img src="Import_sale6.png" style="display:block;margin:0px auto;width:100%;">
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row" style="margin-bottom:4%;">
+        <p class="oe_mt32" style="color: rgb(122, 115, 115);font-size: 26px;font-weight: 300;line-height: 175% !important;font-family: Lato;word-spacing: 1px !important;">
+            <i>In this screenshot you can see the record has created </i>
+        </p>
+        <div class="oe_row" style="margin-bottom:4%;margin-top:4%;">
+            <img src="Import_sale7.png " style="display:block;margin:0px auto;width:100%;">
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row" style="margin-bottom:4%;">
+        <p class="oe_mt32" style="color: rgb(122, 115, 115);font-size: 26px;font-weight: 300;line-height: 175% !important;font-family: Lato;word-spacing: 1px !important;">
+            In this screenshot you can see the information has generated according to csv file and option you have changed wizard
+        </p>
+        <div class="oe_row" style="margin-bottom:4%;margin-top:4%;">
+            <img src="Import_sale8.png" style="display:block;margin:0px auto;width:100%;">
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row" style="margin-bottom:4%;">
+	 <h2 class="oe_slogan" style="letter-spacing: -1px !important;">Import Invoice / Inovice Lines </h2>
+        <p class="oe_mt32" style="color: rgb(122, 115, 115);font-size: 28px;font-weight: 300;line-height: 175% !important;font-family: Lato;word-spacing: 1px !important;">
+            <i>In this screenshot you can see the details available in xls file is only for creating the invoice.The data structure should be in same sequence which is shows in file. </i>
+        </p>
+        <div class="oe_row" style="margin-bottom:4%;margin-top:4%;">
+            <img src="Import_invoice1.png" style="display:block;margin:0px auto;width:100%;">
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row" style="margin-bottom:4%;">
+        <p class="oe_mt32" style="color: rgb(122, 115, 115);font-size: 22px;font-weight: 300;line-height: 175% !important;font-family: Lato;word-spacing: 1px !important;">
+            <i>(1) By click on Invoicing button It will navigate you to invoice page. <br/>
+                (2). By click on import invoice button it will open import invoice wizard form where you can import the csv/xls file. 
+            </i>
+        </p>
+        <div class="oe_row" style="margin-bottom:4%;margin-top:4%;">
+            <img src="Import_invoice2.png" style="display:block;margin:0px auto;width:100%;">
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row" style="margin-bottom:4%;">
+        <p class="oe_mt32" style="color: rgb(122, 115, 115);font-size: 22px;font-weight: 300;line-height: 175% !important;font-family: Lato;word-spacing: 1px !important;">
+            <i> (1) select file type which you want to upload like (csv/xls) <br/>
+                (2) click on upload your file button and attach the file you want to upload <br/>
+                (3) select sequence type of the each records. <br/>
+                (4) select the state of the records which is imported by file which you have attached <br/>
+                (5) select the type of invoice for generate invoice
+            </i>
+        </p>
+        <div class="oe_row" style="margin-bottom:4%;margin-top:4%;">
+            <img src="Import_invoice3.png" style="display:block;margin:0px auto;width:100%;">
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row" style="margin-bottom:4%;">
+        <p class="oe_mt32" style="color: rgb(122, 115, 115);font-size: 22px;font-weight: 300;line-height: 175% !important;font-family: Lato;word-spacing: 1px !important;">
+            <i>After importing xls/csv file the record will creating and it will shows in list view</i>
+        </p>
+        <div class="oe_row" style="margin-bottom:4%;margin-top:4%;">
+            <img src="Import_invoice4.png" style="display:block;margin:0px auto;width:100%;">
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row" style="margin-bottom:4%;">
+        <p class="oe_mt32" style="color: rgb(122, 115, 115);font-size: 22px;font-weight: 300;line-height: 175% !important;font-family: Lato;word-spacing: 1px !important;">
+            <i> In this screenshot you can see the details of record which was imported by xls/csv file and also whatever options you selected in wizard form according to that record has created.</i>
+        </p>
+        <div class="oe_row" style="margin-bottom:4%;margin-top:4%;">
+            <img src="Import_invoice5.png" style="display:block;margin:0px auto;width:100%;">
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row" style="margin-bottom:4%;">
+        <p class="oe_mt32" style="color: rgb(122, 115, 115);font-size: 22px;font-weight: 300;line-height: 175% !important;font-family: Lato;word-spacing: 1px !important;">
+            <i> (1) file type has changed from xls to csv <br/>
+                (2) file has attached csv file <br/>
+                (3) sequence of all record has changed from file sequence to system sequence <br/> 
+                (4) This time state selection will be change from validate to draft state
+            </i>
+        </p>
+        <div class="oe_row" style="margin-bottom:4%;margin-top:4%;">
+            <img src="Import_invoice6.png" style="display:block;margin:0px auto;width:100%;">
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row" style="margin-bottom:4%;">
+        <p class="oe_mt32" style="color: rgb(122, 115, 115);font-size: 22px;font-weight: 300;line-height: 175% !important;font-family: Lato;word-spacing: 1px !important;">
+            <i> After importing csv file and according to wizard option the record has created</i>
+        </p>
+        <div class="oe_row" style="margin-bottom:4%;margin-top:4%;">
+            <img src="Import_invoice7.png" style="display:block;margin:0px auto;width:100%;">
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row" style="margin-bottom:4%;">
+        <p class="oe_mt32" style="color: rgb(122, 115, 115);font-size: 22px;font-weight: 300;line-height: 175% !important;font-family: Lato;word-spacing: 1px !important;">
+            <i> In this screenshot you can see the information has generated according to csv file and option you have changed from wizard <br/>
+                (1) csv file data shows <br/>
+                (2) The record state is in draft state as you were chosen in wizard form <br/>
+                (3) According to sequence option you selected, the sequence of each record is in systems default sequence 
+            </i>
+        </p>
+        <div class="oe_row" style="margin-bottom:4%;margin-top:4%;">
+            <img src="Import_invoice8.png" style="display:block;margin:0px auto;width:100%;">
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row" style="margin-bottom:4%;">
+	<h2 class="oe_slogan" style="letter-spacing: -1px !important;">Import Inventory </h2>
+        <p class="oe_mt32" style="color: rgb(122, 115, 115);font-size: 22px;font-weight: 300;line-height: 175% !important;font-family: Lato;word-spacing: 1px !important;">
+            <i> Below screenshot shows the details information about creating the inventory in three different ways like using barcode, code, and name of the products</i>
+        </p>
+        <div class="oe_row" style="margin-bottom:4%;margin-top:4%;">
+            <img src="Import_inventory1.png" style="display:block;margin:0px auto;width:100%;">
+        </div>
+        <div class="oe_row" style="margin-bottom:4%;margin-top:4%;">
+            <img src="Import_inventory2.png" style="display:block;margin:0px auto;width:100%;">
+        </div>
+        <div class="oe_row" style="margin-bottom:4%;margin-top:4%;">
+            <img src="Import_inventory3.png" style="display:block;margin:0px auto;width:100%;">
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row" style="margin-bottom:4%;">
+        <p class="oe_mt32" style="color: rgb(122, 115, 115);font-size: 22px;font-weight: 300;line-height: 175% !important;font-family: Lato;word-spacing: 1px !important;">
+            <i> For create inventory by uploading xls and csv file. <br/>
+                (1) Click on inventory button on top of the screen <br/>
+                (2) Click on import inventory button for opening import inventory wizard
+            </i>
+        </p>
+        <div class="oe_row" style="margin-bottom:4%;margin-top:4%;">
+            <img src="Import_inventory4.png" style="display:block;margin:0px auto;width:100%;">
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row" style="margin-bottom:4%;">
+        <p class="oe_mt32" style="color: rgb(122, 115, 115);font-size: 22px;font-weight: 300;line-height: 175% !important;font-family: Lato;word-spacing: 1px !important;">
+            <i> (1) Enter the inventory name <br/>
+                (2) Select file type which you want to upload <br/>
+                (3) If import serial/lot number with expiry date checkbox checked then it will also import and create the serial/lot number <br/>
+                (4) Select the inventory location <br/>
+                (5) Select the import product by using (barcode, code, name)which is already available in xls or csv file. <br/>
+                (6) Attach xls/csv file for import data
+            </i>
+        </p>
+        <div class="oe_row" style="margin-bottom:4%;margin-top:4%;">
+            <img src="Import_inventory5.png" style="display:block;margin:0px auto;width:100%;">
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row" style="margin-bottom:4%;">
+        <p class="oe_mt32" style="color: rgb(122, 115, 115);font-size: 22px;font-weight: 300;line-height: 175% !important;font-family: Lato;word-spacing: 1px !important;">
+            <i> As you can see the inventory has created which is shows in list view </i>
+        </p>
+        <div class="oe_row" style="margin-bottom:4%;margin-top:4%;">
+            <img src="Import_inventory6.png" style="display:block;margin:0px auto;width:100%;">
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row" style="margin-bottom:4%;">
+        <p class="oe_mt32" style="color: rgb(122, 115, 115);font-size: 22px;font-weight: 300;line-height: 175% !important;font-family: Lato;word-spacing: 1px !important;">
+            <i> (1) In this screenshot we can see the name of inventory was given on wizard which was shown above the csv file <br/>
+                (2) As we selected the import product by option was barcode and we checked the import serial/lot no with expiry date checkbox based on that products with serial/lot no has created
+            </i>
+        </p>
+        <div class="oe_row" style="margin-bottom:4%;margin-top:4%;">
+            <img src="Import_inventory7.png" style="display:block;margin:0px auto;width:100%;">
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row" style="margin-bottom:4%;">
+        <p class="oe_mt32" style="color: rgb(122, 115, 115);font-size: 22px;font-weight: 300;line-height: 175% !important;font-family: Lato;word-spacing: 1px !important;">
+            <i> (1) Click on Lots/Serial Number menu for open the lots/serial numbers form <br/>
+                (2) As we can see the whatever lots/serial number we had imported with products in xls/csv file has created in this place.
+            </i>
+        </p>
+        <div class="oe_row" style="margin-bottom:4%;margin-top:4%;">
+            <img src="Import_inventory8.png" style="display:block;margin:0px auto;width:100%;">
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row" style="margin-bottom:4%;">
+        <p class="oe_mt32" style="color: rgb(122, 115, 115);font-size: 22px;font-weight: 300;line-height: 175% !important;font-family: Lato;word-spacing: 1px !important;">
+            <i> (1) It shows the lot/serial number which is came from xls and csv file <br/>
+                (2) Whatever barcode had in xls file based on that the product will be selecting. <br/>
+                (3) And also expiry date came from xls/csv file with each barcode,code,name
+            </i>
+        </p>
+        <div class="oe_row" style="margin-bottom:4%;margin-top:4%;">
+            <img src="Import_inventory9.png" style="display:block;margin:0px auto;width:100%;">
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row" style="margin-bottom:4%;">
+	<h2 class="oe_slogan" style="letter-spacing: -1px !important;">Import Purchase Order / Purchase Order Line </h2>
+        <p class="oe_mt32" style="color: rgb(122, 115, 115);font-size: 22px;font-weight: 300;line-height: 175% !important;font-family: Lato;word-spacing: 1px !important;">
+            <i> 
+                In this screenshot as you can see the details available in xls file is only for creating the purchase order. The data structure should be in same sequence which is shows in file.
+            </i>
+        </p>
+        <div class="oe_row" style="margin-bottom:4%;margin-top:4%;">
+            <img src="Import_purchase1.png" style="display:block;margin:0px auto;width:100%;">
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row" style="margin-bottom:4%;">
+        <p class="oe_mt32" style="color: rgb(122, 115, 115);font-size: 22px;font-weight: 300;line-height: 175% !important;font-family: Lato;word-spacing: 1px !important;">
+            <i> (1) Click on Purchase button for navigate to purchase order form. <br/>
+                (2) Click on import purchase order button  for open import xls/csv file file where you can attach file for create purchase order.
+            </i>
+        </p>
+        <div class="oe_row" style="margin-bottom:4%;margin-top:4%;">
+            <img src="Import_purchase2.png" style="display:block;margin:0px auto;width:100%;">
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row" style="margin-bottom:4%;">
+        <p class="oe_mt32" style="color: rgb(122, 115, 115);font-size: 22px;font-weight: 300;line-height: 175% !important;font-family: Lato;word-spacing: 1px !important;">
+            <i> (1) select file type which you want to upload like (csv/xls) <br/>
+                (2) click on upload your file button and attach the file you want to upload <br/>
+                (3) select the state of the records which is imported by file that you have attached <br/>
+                (4) select sequence type of the each records.
+            </i>
+        </p>
+        <div class="oe_row" style="margin-bottom:4%;margin-top:4%;">
+            <img src="Import_purchase3.png" style="display:block;margin:0px auto;width:100%;">
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row" style="margin-bottom:4%;">
+        <p class="oe_mt32" style="color: rgb(122, 115, 115);font-size: 22px;font-weight: 300;line-height: 175% !important;font-family: Lato;word-spacing: 1px !important;">
+            <i>After importing xls/csv file the record will creating and it will shows in list view </i>
+        </p>
+        <div class="oe_row" style="margin-bottom:4%;margin-top:4%;">
+            <img src="Import_purchase4.png" style="display:block;margin:0px auto;width:100%;">
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row" style="margin-bottom:4%;">
+        <p class="oe_mt32" style="color: rgb(122, 115, 115);font-size: 22px;font-weight: 300;line-height: 175% !important;font-family: Lato;word-spacing: 1px !important;">
+            <i> In this screenshot as you can see the details of record which was imported by xls/csv file and whatever options we selected in wizard form according to that record has created. <br/>
+                (1) As we had selected file sequence from wizard form the system will accepted the file sequence. <br/>
+                (2) The record data shows which is available in file.<br/>
+                (3) The record is in draft state as we had selected option on wizard form
+            </i>
+        </p>
+        <div class="oe_row" style="margin-bottom:4%;margin-top:4%;">
+            <img src="Import_purchase5.png" style="display:block;margin:0px auto;width:100%;">
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row" style="margin-bottom:4%;">
+        <p class="oe_mt32" style="color: rgb(122, 115, 115);font-size: 22px;font-weight: 300;line-height: 175% !important;font-family: Lato;word-spacing: 1px !important;">
+            <i> (1) File type has changed from xls to csv <br/>
+                (2) File has attached csv file <br/>
+                (3) This time state selection will be change from validate to draft state <br/>
+                (4) Sequence of all record has changed from file sequence to system sequence
+            </i>
+        </p>
+        <div class="oe_row" style="margin-bottom:4%;margin-top:4%;">
+            <img src="Import_purchase6.png" style="display:block;margin:0px auto;width:100%;">
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row" style="margin-bottom:4%;">
+        <p class="oe_mt32" style="color: rgb(122, 115, 115);font-size: 22px;font-weight: 300;line-height: 175% !important;font-family: Lato;word-spacing: 1px !important;">
+            <i> 
+                (1) As the record sequence will be system sequence <br/>
+                (2) Data has shows as csv file has <br/>
+                (3) State on draft state
+            </i>
+        </p>
+        <div class="oe_row" style="margin-bottom:4%;margin-top:4%;">
+            <img src="Import_purchase7.png" style="display:block;margin:0px auto;width:100%;">
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row" style="margin-bottom:4%;">
+	<h2 class="oe_slogan" style="letter-spacing: -1px !important;">Import Customer Inovice / Import Supplier Invoice </h2>
+        <p class="oe_mt32" style="color: rgb(122, 115, 115);font-size: 22px;font-weight: 300;line-height: 175% !important;font-family: Lato;word-spacing: 1px !important;">
+            <i> In this screenshot data shows in xls file is for creating Customer/Supplier Payments. The data file structure should be same for form import payment
+            </i>
+        </p>
+        <div class="oe_row" style="margin-bottom:4%;margin-top:4%;">
+            <img src="Import_payment1.png" style="display:block;margin:0px auto;width:100%;">
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row" style="margin-bottom:4%;">
+        <p class="oe_mt32" style="color: rgb(122, 115, 115);font-size: 22px;font-weight: 300;line-height: 175% !important;font-family: Lato;word-spacing: 1px !important;">
+            <i> (1) Click on Invoice button for navigate to invoice page <br/>
+                (2) Click on import payment button for open wizard form where we can import xls/csv file for create payments
+            </i>
+        </p>
+        <div class="oe_row" style="margin-bottom:4%;margin-top:4%;">
+            <img src="Import_payment2.png" style="display:block;margin:0px auto;width:100%;">
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row" style="margin-bottom:4%;">
+        <p class="oe_mt32" style="color: rgb(122, 115, 115);font-size: 22px;font-weight: 300;line-height: 175% !important;font-family: Lato;word-spacing: 1px !important;">
+            <i> (1) Select the payment for <br/>
+                (2) Attach xls/csv file for import data
+            </i>
+        </p>
+        <div class="oe_row" style="margin-bottom:4%;margin-top:4%;">
+            <img src="Import_payment3.png" style="display:block;margin:0px auto;width:100%;">
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row" style="margin-bottom:4%;">
+        <p class="oe_mt32" style="color: rgb(122, 115, 115);font-size: 22px;font-weight: 300;line-height: 175% !important;font-family: Lato;word-spacing: 1px !important;">
+            <i> As we can see the whatever data in xls file which we had imported accordingly the record has generated </i>
+        </p>
+        <div class="oe_row" style="margin-bottom:4%;margin-top:4%;">
+            <img src="Import_payment4.png" style="display:block;margin:0px auto;width:100%;">
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row" style="margin-bottom:4%;">
+        <p class="oe_mt32" style="color: rgb(122, 115, 115);font-size: 22px;font-weight: 300;line-height: 175% !important;font-family: Lato;word-spacing: 1px !important;">
+            <i> (1) Payment option changed from customer to supplier <br/>
+                (2) Attach xls file for import data
+            </i>
+        </p>
+        <div class="oe_row" style="margin-bottom:4%;margin-top:4%;">
+            <img src="Import_payment6.png" style="display:block;margin:0px auto;width:100%;">
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row" style="margin-bottom:4%;">
+        <p class="oe_mt32" style="color: rgb(122, 115, 115);font-size: 22px;font-weight: 300;line-height: 175% !important;font-family: Lato;word-spacing: 1px !important;">
+            <i> As we can see the record has generated after importing the xls file </i>
+        </p>
+        <div class="oe_row" style="margin-bottom:4%;margin-top:4%;">
+            <img src="Import_payment6.png" style="display:block;margin:0px auto;width:100%;">
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row" style="margin-bottom:4%;">
+	 <h2 class="oe_slogan" style="letter-spacing: -1px !important;">Import Customer / Supplier </h2>
+        <p class="oe_mt32" style="color: rgb(122, 115, 115);font-size: 22px;font-weight: 300;line-height: 175% !important;font-family: Lato;word-spacing: 1px !important;">
+            <i> 
+                (1) For create customers by uploading xls/csv file, click on sale button for navigate to sale form and we can see the import partner button at left side bottom. <br/>
+                (2) Click on that button for open wizard form form import file.
+            </i>
+        </p>
+        <div class="oe_row" style="margin-bottom:4%;margin-top:4%;">
+            <img src="Import_partner1.png" style="display:block;margin:0px auto;width:100%;">
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row" style="margin-bottom:4%;">
+        <p class="oe_mt32" style="color: rgb(122, 115, 115);font-size: 22px;font-weight: 300;line-height: 175% !important;font-family: Lato;word-spacing: 1px !important;">
+            <i> 
+                (1) Select file type you want to upload <br/>
+                (2) Click on upload button and select and attach file you want to import
+            </i>
+        </p>
+        <div class="oe_row" style="margin-bottom:4%;margin-top:4%;">
+            <img src="Import_partner2.png" style="display:block;margin:0px auto;width:100%;">
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row" style="margin-bottom:4%;">
+        <p class="oe_mt32" style="color: rgb(122, 115, 115);font-size: 22px;font-weight: 300;line-height: 175% !important;font-family: Lato;word-spacing: 1px !important;">
+            <i> 
+                (1) Click on customer button for shows all customers information. <br/>
+                (2) As we can see customer has created.
+            </i>
+        </p>
+        <div class="oe_row" style="margin-bottom:4%;margin-top:4%;">
+            <img src="Import_partner3.png" style="display:block;margin:0px auto;width:100%;">
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row" style="margin-bottom:4%;">
+        <p class="oe_mt32" style="color: rgb(122, 115, 115);font-size: 22px;font-weight: 300;line-height: 175% !important;font-family: Lato;word-spacing: 1px !important;">
+            <i> 
+                (1) Customer name <br/>
+                (2) Detail information about customer which we had imported file
+            </i>
+        </p>
+        <div class="oe_row" style="margin-bottom:4%;margin-top:4%;">
+            <img src="Import_partner4.png" style="display:block;margin:0px auto;width:100%;">
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row" style="margin-bottom:4%;">
+	<h2 class="oe_slogan" style="letter-spacing: -1px !important;">Import Products </h2>
+        <p class="oe_mt32" style="color: rgb(122, 115, 115);font-size: 22px;font-weight: 300;line-height: 175% !important;font-family: Lato;word-spacing: 1px !important;">
+            <i> In this screenshot the data shows in xls file is for generating product by importing file.All data should be in sequence according to header
+            </i>
+        </p>
+        <div class="oe_row" style="margin-bottom:4%;margin-top:4%;">
+            <img src="Import_product1.png" style="display:block;margin:0px auto;width:100%;">
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row" style="margin-bottom:4%;">
+        <p class="oe_mt32" style="color: rgb(122, 115, 115);font-size: 22px;font-weight: 300;line-height: 175% !important;font-family: Lato;word-spacing: 1px !important;">
+            <i> 
+                (1) For create product click on sale button for navigate to sale order form.
+                (2) On left side menu click on import products button for open import product wizard
+            </i>
+        </p>
+        <div class="oe_row" style="margin-bottom:4%;margin-top:4%;">
+            <img src="Import_product2.png" style="display:block;margin:0px auto;width:100%;">
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row" style="margin-bottom:4%;">
+        <p class="oe_mt32" style="color: rgb(122, 115, 115);font-size: 22px;font-weight: 300;line-height: 175% !important;font-family: Lato;word-spacing: 1px !important;">
+            <i> 
+                (1) Select file type which we want to upload
+                (2) Click on upload file button and select or attach file we want to import
+            </i>
+        </p>
+        <div class="oe_row" style="margin-bottom:4%;margin-top:4%;">
+            <img src="Import_product3.png" style="display:block;margin:0px auto;width:100%;">
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row" style="margin-bottom:4%;">
+        <p class="oe_mt32" style="color: rgb(122, 115, 115);font-size: 22px;font-weight: 300;line-height: 175% !important;font-family: Lato;word-spacing: 1px !important;">
+            <i> 
+                (1) As we can see the product has created after the import the file
+                (2) The file has total 3 records according that three product has created
+            </i>
+        </p>
+        <div class="oe_row" style="margin-bottom:4%;margin-top:4%;">
+            <img src="Import_product4.png" style="display:block;margin:0px auto;width:100%;">
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row" style="margin-bottom:4%;">
+        <p class="oe_mt32" style="color: rgb(122, 115, 115);font-size: 22px;font-weight: 300;line-height: 175% !important;font-family: Lato;word-spacing: 1px !important;">
+            <i> As we can see product name and other details for particular product shows in form. </i>
+        </p>
+        <div class="oe_row" style="margin-bottom:4%;margin-top:4%;">
+            <img src="Import_product5.png" style="display:block;margin:0px auto;width:100%;">
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row" style="margin-bottom:4%;">
+	<h2 class="oe_slogan" style="letter-spacing: -1px !important;">Import journals entry line </h2>
+        <p class="oe_mt32" style="color: rgb(122, 115, 115);font-size: 22px;font-weight: 300;line-height: 175% !important;font-family: Lato;word-spacing: 1px !important;">
+            <i> In this screenshot the data shows in xls file is for generating journal items/lines by importing file.All data should be in sequence according to header </i>
+        </p>
+        <div class="oe_row" style="margin-bottom:4%;margin-top:4%;">
+            <img src="import_journal1.png" style="display:block;margin:0px auto;width:100%;">
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row" style="margin-bottom:4%;">
+        <p class="oe_mt32" style="color: rgb(122, 115, 115);font-size: 22px;font-weight: 300;line-height: 175% !important;font-family: Lato;word-spacing: 1px !important;">
+            <i> (1) For create journal items/lines click on Invoicing button for navigate to invoice form. <br/>
+		(2) On left side menu click on Journal Entries button for open journal entries form. <br/>
+		(3) As we can see there is already one record created now we just have to open it.</i>
+        </p>
+        <div class="oe_row" style="margin-bottom:4%;margin-top:4%;">
+            <img src="import_journal2.png" style="display:block;margin:0px auto;width:100%;">
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row" style="margin-bottom:4%;">
+        <p class="oe_mt32" style="color: rgb(122, 115, 115);font-size: 22px;font-weight: 300;line-height: 175% !important;font-family: Lato;word-spacing: 1px !important;">
+            <i> (1) On this point we can see there is no lines/items currently available in journal <br/>
+		(2) For import journal items/lines click on Import Journal button </i>
+        </p>
+        <div class="oe_row" style="margin-bottom:4%;margin-top:4%;">
+            <img src="import_journal3.png" style="display:block;margin:0px auto;width:100%;">
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row" style="margin-bottom:4%;">
+        <p class="oe_mt32" style="color: rgb(122, 115, 115);font-size: 22px;font-weight: 300;line-height: 175% !important;font-family: Lato;word-spacing: 1px !important;">
+            <i> (1) Select file type which you want to import <br/>
+		(2) Attach xls/csv file for import journal items/lines </i>
+        </p>
+        <div class="oe_row" style="margin-bottom:4%;margin-top:4%;">
+            <img src="import_journal4.png" style="display:block;margin:0px auto;width:100%;">
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row" style="margin-bottom:4%;">
+        <p class="oe_mt32" style="color: rgb(122, 115, 115);font-size: 22px;font-weight: 300;line-height: 175% !important;font-family: Lato;word-spacing: 1px !important;">
+            <i> As we can see journal items/lines imported after click on import button from wizard. </i>
+        </p>
+        <div class="oe_row" style="margin-bottom:4%;margin-top:4%;">
+            <img src="import_journal5.png" style="display:block;margin:0px auto;width:100%;">
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row" style="margin-bottom:4%;">
+	<h2 class="oe_slogan" style="letter-spacing: -1px !important;">Import statement Line </h2>
+        <p class="oe_mt32" style="color: rgb(122, 115, 115);font-size: 22px;font-weight: 300;line-height: 175% !important;font-family: Lato;word-spacing: 1px !important;">
+            <i>  In this screenshot the data shows in xls file is for generating bank statement lines by importing file.All data should be in sequence according to header </i>
+        </p>
+        <div class="oe_row" style="margin-bottom:4%;margin-top:4%;">
+            <img src="import_bank_line1.png" style="display:block;margin:0px auto;width:100%;">
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row" style="margin-bottom:4%;">
+        <p class="oe_mt32" style="color: rgb(122, 115, 115);font-size: 22px;font-weight: 300;line-height: 175% !important;font-family: Lato;word-spacing: 1px !important;">
+            <i>  (1) For create bank statement lines click on Invoicing button for navigate to invoice form. <br/>
+		 (2) On center of the dashboard click on New Statement link button for open bank statement form. </i>
+        </p>
+        <div class="oe_row" style="margin-bottom:4%;margin-top:4%;">
+            <img src="import_bank_line2.png" style="display:block;margin:0px auto;width:100%;">
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row" style="margin-bottom:4%;">
+        <p class="oe_mt32" style="color: rgb(122, 115, 115);font-size: 22px;font-weight: 300;line-height: 175% !important;font-family: Lato;word-spacing: 1px !important;">
+            <i> (1) Enter the reference name for new statement. <br/>
+		(2) As we can see at the bottom there is no statement/transaction line shows. <br/>
+		(3) For import bank statement lines click on Add Line button. </i>
+        </p>
+        <div class="oe_row" style="margin-bottom:4%;margin-top:4%;">
+            <img src="import_bank_line3.png" style="display:block;margin:0px auto;width:100%;">
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row" style="margin-bottom:4%;">
+        <p class="oe_mt32" style="color: rgb(122, 115, 115);font-size: 22px;font-weight: 300;line-height: 175% !important;font-family: Lato;word-spacing: 1px !important;">
+            <i> (1) Select file type which you want to import <br/>
+		(2) Attach xls/csv file for import account statement transactions/lines
+	    </i>
+        </p>
+        <div class="oe_row" style="margin-bottom:4%;margin-top:4%;">
+            <img src="import_bank_line4.png" style="display:block;margin:0px auto;width:100%;">
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row" style="margin-bottom:4%;">
+        <p class="oe_mt32" style="color: rgb(122, 115, 115);font-size: 22px;font-weight: 300;line-height: 175% !important;font-family: Lato;word-spacing: 1px !important;">
+            <i>  As we can see bank statement transactions/lines imported after click on import button from wizard. </i>
+        </p>
+        <div class="oe_row" style="margin-bottom:4%;margin-top:4%;">
+            <img src="import_bank_line5.png" style="display:block;margin:0px auto;width:100%;">
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row" style="margin-bottom:4%;">
+	<h2 class="oe_slogan" style="letter-spacing: -1px !important;">Import BOM (Bill of Materials) </h2>
+        <p class="oe_mt32" style="color: rgb(122, 115, 115);font-size: 22px;font-weight: 300;line-height: 175% !important;font-family: Lato;word-spacing: 1px !important;">
+            <i>  In this screenshot the data shows in xls file is for generating BOM and bom lines by importing xml file.All data should be in sequence according to header </i>
+        </p>
+        <div class="oe_row" style="margin-bottom:4%;margin-top:4%;">
+            <img src="import_mrp1.png" style="display:block;margin:0px auto;width:100%;">
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row" style="margin-bottom:4%;">
+        <p class="oe_mt32" style="color: rgb(122, 115, 115);font-size: 22px;font-weight: 300;line-height: 175% !important;font-family: Lato;word-spacing: 1px !important;">
+            <i> (1) For create BOM and bom lines click on Manufacturing button for navigate to manufacturing form. <br/>
+		(2) Click on Import BOM button for open impor mrp wizard form.
+	   </i>
+        </p>
+        <div class="oe_row" style="margin-bottom:4%;margin-top:4%;">
+            <img src="import_mrp2.png" style="display:block;margin:0px auto;width:100%;">
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row" style="margin-bottom:4%;">
+        <p class="oe_mt32" style="color: rgb(122, 115, 115);font-size: 22px;font-weight: 300;line-height: 175% !important;font-family: Lato;word-spacing: 1px !important;">
+            <i> (1) Select file type which you want to import <br/>
+		(2) Select type of bom which you want to create. <br/>
+		(3) Attach xls/csv file for import account statement transactions/lines </i>
+        </p>
+        <div class="oe_row" style="margin-bottom:4%;margin-top:4%;">
+            <img src="import_mrp3.png" style="display:block;margin:0px auto;width:100%;">
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row" style="margin-bottom:4%;">
+        <p class="oe_mt32" style="color: rgb(122, 115, 115);font-size: 22px;font-weight: 300;line-height: 175% !important;font-family: Lato;word-spacing: 1px !important;">
+            <i> As you can see record has generated </i>
+        </p>
+        <div class="oe_row" style="margin-bottom:4%;margin-top:4%;">
+            <img src="import_mrp4.png" style="display:block;margin:0px auto;width:100%;">
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row" style="margin-bottom:4%;">
+        <p class="oe_mt32" style="color: rgb(122, 115, 115);font-size: 22px;font-weight: 300;line-height: 175% !important;font-family: Lato;word-spacing: 1px !important;">
+            <i> (1) The main product(Product template) comes from xls file <br/>
+		(2) Product reference number for main product <br/>
+		(3) As you selected bom type from wizard which is selected <br/>
+		(4) Bom lines imported for create mai product. </i>
+        </p>
+        <div class="oe_row" style="margin-bottom:4%;margin-top:4%;">
+            <img src="import_mrp5.png" style="display:block;margin:0px auto;width:100%;">
+        </div>
+    </div>
+</section>
+
+<section class="oe_container oe_dark">
+    <div class="oe_row" style="margin-bottom:4%;">
+        <h3 class="oe_slogan" style="letter-spacing: -1px !important; font-style: italic;">Before installing module install the below packages</h3>
+        <p class="oe_mt32" style="color: rgb(122, 115, 115);font-size: 22px;font-weight: 300;line-height: 175% !important;font-family: Lato;word-spacing: 1px !important;">
+            1. sudo pip install xlrd <br/>
+            or <br/>
+            sudo apt-get install python-xlrd <br/>
+            2. sudo pip install xlwt <br/>
+            or <br/>
+            sudo apt-get install python-xlwt
+        </p>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row" style="margin-bottom:4%;">
+        <h2 class="oe_slogan" style="letter-spacing: -1px !important; font-style: italic;">1 Year 360 Free Support</h2>
+        <h3 class="oe_slogan" style="letter-spacing: -1px !important;font-style: italic;">Contact Us for any problem for Odoo Magento connector</h3>
+        <p class="oe_mt32" style="color: rgb(122, 115, 115);font-size: 17px;font-weight: 300; font-style: italic; line-height: 175% !important;font-family: Lato;word-spacing: 1px !important;">You will be provided with Free support for 1 year in case any bugs or support while installing and testing the module. <br/>Free updates of modules for 1 year for the client who have purchased our connector.</p>
+
+        <h2 class="oe_slogan" style="letter-spacing: -1px !important; font-style: italic;">Get Free Odoo Consultancy </h2>
+        <p class="oe_mt32" style="color: rgb(122, 115, 115);font-size: 17px;font-weight: 300; font-style: italic; line-height: 175% !important;font-family: Lato;word-spacing: 1px !important;">
+            Our team at Globalteckz is not only bound to provide support for this particular app. Incase of any other issues related to Odoo or Magento you would like to discuss feel free to connect with us via email – info@globalteckz.com. We ensure you proper Odoo Consultancy for the development of the solution.
+        </p>
+        <h2 class="oe_slogan" style="letter-spacing: -1px !important; font-style: italic;">About Globalteckz : </h2>
+        <p class="oe_mt32" style="color: rgb(122, 115, 115);font-size: 17px;font-weight: 300; font-style: italic; line-height: 175% !important;font-family: Lato;word-spacing: 1px !important;">
+            Globalteckz is an official Odoo partner completed more than 50+ Odoo projects across the globe. Quality is key of our coding and we follow strict rules on Odoo Standard coding ensuring every module is bug free. At GlobalTeckz we specialize in providing ERP implementation using the best of industry methodology that ensures successful ERP implementation. Be it manufacturing trading or eCommerce industry our resource thrive to make every project success for our clients.<br/>
+            If you feel that this module can be helpful for your business feel free to email us on <a href="mailto:sales@globalteckz.com">sales@globalteckz.com</a> or raise a ticket on support
+        </p>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row" style="margin-bottom:4%;">
+        <h2 class="oe_slogan" style="letter-spacing: -1px !important; font-style: italic;">Other apps which are developed by Globalteckz</h2>
+        <table  width="100%" style="border:1px solid grey;">
+            <tr style="border:1px solid grey;" >
+                <td width="33%" >
+                    <a href="https://apps.odoo.com/apps/modules/11.0/globalteckz_magento_2/" target="_blank" style="color:#004460;"> <img class="oe_picture oe_screenshot" src="apps_icon/globalteckz_magento.png" height="140px" width="240px" alt="Globalteckz" >
+                        Odoo Magento 2.0 connector
+                    </a>
+
+                </td>
+                <td width="33%">
+                    <a href="https://www.odoo.com/apps/modules/10.0/amazon_connector/" target="_blank" style="color:#004460;"> <img class="oe_picture oe_screenshot" src="apps_icon/globalteckz_amazon.png" height="140px" width="240px" alt="Globalteckz">
+                        Odoo Amazon connector
+                    </a>
+                </td>
+                <td width="33%">
+                    <a href="https://www.odoo.com/apps/modules/10.0/globalteckz_subscription_management/" target="_blank" style="color:#004460;"> <img class="oe_picture oe_screenshot" src="apps_icon/globalteckz_subscription.png" height="140px" width="240px" alt="Globalteckz">
+                        Odoo Subscription Module
+                    </a>
+                </td>
+            </tr>
+            <!--                second-->
+            <tr style="border:1px solid green;">
+                <td width="33%" >
+                    <a href="https://www.odoo.com/apps/modules/10.0/web_debranding_globalteckz/" target="_blank" style="color:#004460;"> <img class="oe_picture oe_screenshot" src="apps_icon/globalteckz_debranding.png" height="140px" width="240px" alt="Globalteckz">
+                        Odoo 10 Debranding Look and feel
+                    </a>
+
+                </td>
+                <td width="33%">
+                    <a href="https://www.odoo.com/apps/modules/10.0/globalteckz_magento_2/" target="_blank" style="color:#004460;"> <img class="oe_picture oe_screenshot" src="apps_icon/globalteckz_magento_2.png" height="140px" width="240px" alt="Globalteckz">
+                        Odoo 10 / Odoo 9 Magento 2.0 + connector
+                    </a>
+                </td>
+                <td width="33%">
+                    <a href="https://www.odoo.com/apps/modules/10.0/sales_purchase_invoice_discount/" target="_blank" style="color:#004460;"> <img class="oe_picture oe_screenshot" src="apps_icon/globalteckz_global_discount.png" height="140px" width="240px" alt="Globalteckz">
+                        Odoo 10 Global Discount on Sales,Purchase & Invoice with Tax calculation
+                    </a>
+                </td>
+            </tr>
+            <!--                third-->
+            <tr style="border:1px solid green;" >
+                <td width="33%" >
+                    <a href="https://www.odoo.com/apps/modules/9.0/prestashop_connector/" target="_blank" style="color:#004460;"> <img class="oe_picture oe_screenshot" src="apps_icon/globalteckz_prestashop.png" height="140px" width="240px" alt="Globalteckz">
+                        Odoo Prestashop connector
+
+                    </a>
+
+                </td>
+                <td width="33%">
+                    <a href="https://www.odoo.com/apps/modules/10.0/globalteckz_ebay/" target="_blank" style="color:#004460;"> <img class="oe_picture oe_screenshot" src="apps_icon/globalteckz_ebay.png" height="140px" width="240px" alt="Globalteckz">
+                        Odoo eBay connector
+                    </a>
+                </td>
+                <td width="33%">
+                    <a href="https://www.odoo.com/apps/modules/10.0/globalteckz_hospital_manangement" target="_blank" style="color:#004460;"> <img class="oe_picture oe_screenshot" src="apps_icon/globalteckz_hospital.png" height="140px" width="240px" alt="Globalteckz">
+                        Odoo Hospital Management
+                    </a>
+                </td>
+            </tr>
+            <!--                fourth-->
+            <tr style="border:1px solid green;">
+                <td width="33%" >
+                    <a href="https://www.odoo.com/apps/modules/10.0/globalteckz_employee_advance_salary_management/" target="_blank" style="color:#004460;"> <img class="oe_picture oe_screenshot" src="apps_icon/globalteckz_advance_salary_management.png" height="140px" width="240px" alt="Globalteckz">
+                        Odoo employee Advance Salary Management
+
+                    </a>
+
+                </td>
+                <td width="33%">
+                    <a href="https://www.odoo.com/apps/modules/10.0/pos_bundle/" target="_blank" style="color:#004460;"> <img class="oe_picture oe_screenshot" src="apps_icon/globalteckz_pos_bundle.png" height="140px" width="240px" alt="Globalteckz">
+                        Odoo 10 POS Bundle/Combo product
+                    </a>
+                </td>
+                <td width="33%">
+                    <a href="https://www.odoo.com/apps/modules/browse?author=Globalteckz" target="_blank" style="color:#004460;">
+                        <center><h2 style="margin-top:55px;">More Apps ..</h2></center>
+                    </a>
+                </td>
+            </tr>
+
+        </table>
+
+        <h2 class="oe_slogan" style="letter-spacing: -1px !important; font-style: italic;">We offer Magento and Odoo customizations too incase needed</h2>
+    </div>
+</section>
+<section class="container">
+    <div class="oe_dark oe_quote" style="height:410px">
+        <div class="col-md-12">
+            <div class="col-md-6">
+                <img class="oe_photo" src="apps_icon/logo1.png" alt="Globalteckz" />
+                <h3 class="oe_slogan">Official Odoo Partner</h3>
+                <h2 class="oe_slogan">Odoo Support / Customisation Service</h2>
+                <p>You can contact us for further Odoo Support, Odoo customisation, Odoo implementation, Odoo 3rd Party integration with any software, Odoo training, You can communicate with any mode to contact us.</p>
+            </div>
+            <div class="col-md-6 text-left">
+                <div class="oe_author">You can connect us</div>
+                <br/>
+                <div class="oe_job"><i class="fa fa-envelope"></i> <span><a href="mailto:sales@globalteckz.com;" target="_blank">sales@globalteckz.com</a></span></div>
+                <div class="oe_job"><i class="fa fa-mobile fa-2x"></i> <span><a href="tel:+91 9833344333" target="_blank">+91 98333 44 333</a></span></div>
+                <div class="oe_job"><i class="fa fa-skype"></i> <span><a href="skype:abraar.patel" target="_blank">abraar.patel | kadriazhar</a></span></div>
+                <div class="oe_job"><i class="fa fa-facebook-square"></i> <span><a href="https://www.facebook.com/globalteckz/" target="_blank">Globalteckz</a></span></div>
+                <div class="oe_job"><i class="fa fa-google-plus-square"></i> <span><a href="https://plus.google.com/+Globalteckz" target="_blank">+Globalteckz</a></span></div>
+                <div class="oe_job"><i class="fa fa-twitter-square"></i> <span><a href="https://twitter.com/globalteckz" target="_blank">@globalteckz</a></span></div>
+                <div class="oe_job"><i class="fa fa-youtube-square fa-1x"></i> <span><a href="https://www.youtube.com/channel/UCBHWs6l65Rd1DY9AUBuv5Dg" target="_blank">Globalteckz</a></span></div>
+                <div class="oe_job"><i class="fa fa-globe"></i> <span><a href="https://www.globalteckz.com/" target="_blank">www.globalteckz.com</a></span></div>
+
+
+            </div>
+
+        </div>
+    </div>
+</section>
+<section class="oe_container lead">
+    <div class="oe_row oe_spaced">
+        <div class="oe_span12">
+            <h2 class="oe_slogan"><a href="http://support-portal.globalteckz.com/"  style= "color: #000000 !important;"> Get Help & Support</a></h2>
+        </div>
+        <br/>
+        <div class="oe_slogan oe_spaced text-center">
+            <a class="btn btn-success mt8" title="Get Help !" style= "background-color:#9B0F4E; color: #FFFFFF !important;" href="http://support-portal.globalteckz.com/"> Help </a>
+            <a class="btn btn-success mt8" title="Get Support!" style="background-color:#9B0F4E; color: #FFFFFF !important;" href="http://support-portal.globalteckz.com/"> Support </a>
+            <a class="btn btn-success mt8"  title="Request New Features now !" style="background-color:#9B0F4E; color: #FFFFFF !important;" href="http://globalteckz.com/contact-us/enquiry-form"> Request New Features </a>
+        </div>
+    </div>
+</section>

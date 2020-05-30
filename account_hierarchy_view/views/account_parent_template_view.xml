@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="account_parent_assets_backend" name="account_hierarchy_view assets" inherit_id="web.assets_backend">
+        <xpath expr="." position="inside">
+            <script type="text/javascript" src="/account_hierarchy_view/static/src/js/account_backend.js"></script>
+            <script type="text/javascript" src="/account_hierarchy_view/static/src/js/account_widgets.js"></script>
+            <link rel="stylesheet" href="/account_hierarchy_view/static/src/less/coa_heirarchy.less" />
+        </xpath>
+   </template>
+
+</odoo>

@@ -1,0 +1,20 @@
+<odoo>
+
+	<record model="ir.actions.server" id="action_coa_posted">
+		<field name="name">COA Hierarchy Menu</field>
+		<field name="type">ir.actions.server</field>
+		<field name="model_id" ref="account_hierarchy_view.model_account_open_chart" />
+		<field name="state">code</field>
+		<field name="code">
+wiz = env['account.open.chart'].create({'target_move': 'posted'}) 
+action = wiz.account_chart_open_window()
+		</field>
+	</record>
+
+	
+	<menuitem action="action_coa_posted"
+		id="menu_coa_posted" parent="account.menu_finance_legal_statement"
+		sequence="105" />
+	
+	
+</odoo>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	
+	<template id="report_financial_inherit" inherit_id="account.report_financial">
+		<xpath expr="//t/t/t/div/table[1]" position="replace">
+		    <table class="table table-condensed" t-if="data['debit_credit'] == 1">
+		    	<t t-set="debit" t-value="0" />
+				<t t-set="credit" t-value="0" />
+				<t t-set="balance" t-value="0" />
+			    <thead>
+			        <tr>
+			            <th>Name</th>
+			            <th class="text-right">Debit</th>
+			            <th class="text-right">Credit</th>
+			            <th class="text-right">Balance</th>
+			        </tr>
+			    </thead>
+			    <tbody>
+			        <tr t-foreach="get_account_lines" t-as="a">
+			            <t t-if="a['level'] != 0">
+			                <t t-if="a.get('level') &gt; 3"><t t-set="style" t-value="'font-weight: normal;'"/></t>
+			                <t t-if="not a.get('level') &gt; 3"><t t-set="style" t-value="'font-weight: bold;'"/></t>
+			
+			                <td>
+			                    <span style="color: white;" t-esc="'..' * a.get('level', 0)"/>
+			                    <span t-att-style="style" t-esc="a.get('name')"/>
+			                </td>
+			                <td class="text-right" style="white-space: text-nowrap;">
+			                    <span t-att-style="style" t-esc="a.get('debit')" t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}"/>
+			                </td>
+			                <t t-set="debit" t-value="debit + a.get('debit')"/>
+			                <td class="text-right" style="white-space: text-nowrap;">
+			                    <span t-att-style="style" t-esc="a.get('credit')" t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}"/>
+			                </td>
+			                <t t-set="credit" t-value="credit + a.get('credit')"/>
+			                <td class="text-right" style="white-space: text-nowrap;">
+			                    <span t-att-style="style" t-esc="a.get('balance')" t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}"/>
+			                </td>
+			                <t t-set="balance" t-value="balance + a.get('balance')"/>
+			            </t>
+			        </tr>
+			        <tr>
+						<td><strong>Totals</strong></td>
+						<td style="text-align: right;"> <span t-esc="debit" t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}"></span> </td>
+						<td style="text-align: right;"> <span t-esc="credit" t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}"></span> </td>
+						<td style="text-align: right;"> <span t-esc="balance" t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}"></span> </td>
+					</tr>
+			    </tbody>
+			</table>
+		</xpath>
+	</template>
+
+</odoo>
+
+
+
+
+
+
+
+
+
+
+
+
